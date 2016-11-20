@@ -21,7 +21,7 @@
           <li><a href="examples.html" class="STYLE2">research</a></li>
           <li><a href="page.html" class="STYLE2">publications</a></li>
           <li><a href="another_page.html" class="STYLE2">link</a></li>
-          <li><a href="contact.html" class="STYLE2">contact</a></li>
+          <li><a href="contact.php" class="STYLE2">contact</a></li>
         </ul>
       </nav>
     </header>
@@ -35,21 +35,18 @@
       <div id="content">
         <h1>Links</h1>
         
-		<p>* <a href="http://blog.csdn.net/g382112762">My CSDN Blog</a></p>
+		<p>* Email: gaocm@cqu.edu.cn</p>
 		
-		<p>* <a href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN">Google Scholar</a></p>
+		<p>* Phone: +86 153 2032 4331</p>
 		
-		<p>* <a href="http://www.cs.cqu.edu.cn/public/tindex/Y0078">Prof. Shi</a></p>
-		
-		<p>* <a href="http://www.cs.cityu.edu.hk/~jasonxue/">Prof. Jason </a></p>
-		
-		<p>* <a href="http://www.cs.cqu.edu.cn/public/tindex/B0226">Prof. Edwin Sha</a></p>
+		<p>* Address: Room 615, Main Building, No. 174 Shazhengjie, Shapingba, Chongqing, 400044, China</p>
+	
 		
 		
       </div>
     </div>
     <footer>
-      <p class="STYLE2">&copy; 2016 Congming Gao. All Rights Reserved.</p>
+      <p class="STYLE2">&copy; 2015 Congming Gao. All Rights Reserved.</p>
     </footer>
   </div>
   <!-- javascript at the bottom for fast page loading -->
