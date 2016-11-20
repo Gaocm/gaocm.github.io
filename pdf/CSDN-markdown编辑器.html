@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://write.blog.csdn.net/mdeditor -->
+<html manifest="cache.manifest" style="overflow: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CSDN-markdown编辑器</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msvalidate.01" content="5E47EE6F67B069C17E3CDD418351A612">   
+  
+    <script src="./CSDN-markdown编辑器_files/jquery.min.js.下载"></script>
+    <script type="text/javascript" src="./CSDN-markdown编辑器_files/check.js.下载"></script>
+       
+         
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        .csdn-toolbar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            z-index: 1005;
+            width: 100% !important;
+            padding: 0 35px !important;
+            transition: all .5s;
+            box-sizing: border-box;
+        }
+
+            .csdn-toolbar .container {
+                width: 100% !important;
+            }
+
+        #ie8 {
+            display: none;
+            display: block \9;
+            width: 500px;
+            padding: 50px 0;
+            border: 1px solid #ddd;
+            background: #eee;
+            text-align: center;
+            font-size: 24px;
+            margin: 200px 0 0 -250px;
+            position: absolute;
+            left: 50%;
+            z-index: -1;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var isExpert = 'False';
+
+        // Use ?debug to serve original JavaScript files instead of minified
+               
+            window.baseDir = 'http://static.blog.csdn.net/public/res'
+
+            if (!/(\?|&)debug($|&)/.test(location.search)) {
+                window.baseDir += '-min';
+            }
+            window.require = {
+                baseUrl: window.baseDir,
+                deps: ['main'],
+                urlArgs: 'v=1025'
+            };
+           document.domain = "csdn.net";
+        
+        
+        //document.domain = "csdn.net";
+
+        //var addPushCheckInterval = setInterval(function () {
+        //    var modal = $(".modal-content:visible");
+        //    var modaltitle = modal.find(".modal-title");
+        //    if (modaltitle != undefined && modal.length > 0 && $(modaltitle).html() == "文章设置") {
+        //        $("#csdn-at-blog-checkbox").hide();
+        //        $(".modal-footer #csdn-at-blog-checkbox").parent().find("span").hide();
+        //        $("#bole_help_bt").hide();
+        //        clearInterval(addPushCheckInterval);
+        //    }
+        //}, 500);
+
+
+        if (isExpert == "True") {
+            setTimeout(function () {
+                $("#input-blog-level").parent().parent().parent().show();
+            }, 1000);
+        }
+
+        setTimeout(function () {
+            $("#csdnEditor").keyup(function () {
+                writedisplay(500);
+            });
+        }, 500);
+        
+        writedisplay(3000);
+        writedisplay(5000);
+        writedisplay(8000);
+        function writedisplay(time)
+        {
+            setTimeout(function () {               
+                $(".math[role='math']").each(function (index, value) { $(this).find("span").last().css("color", "#f9f9f9"); });
+            }, time);
+        }
+
+    </script>   
+             
+
+    <!--<script src="../public/res-min/require.js"></script>-->
+      
+    
+    
+    
+
+    <link href="./CSDN-markdown编辑器_files/index.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./CSDN-markdown编辑器_files/main.js.下载"></script><link rel="stylesheet" type="text/css" href="./CSDN-markdown编辑器_files/style.css"><link type="text/css" rel="stylesheet" href="./CSDN-markdown编辑器_files/default.css"><script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({
+	skipStartupTypeset: true,
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: [
+            "STIX",
+            "TeX"
+        ],
+        linebreaks: {
+            automatic: true
+        },
+        EqnChunk: 10,
+        imageFont: null
+    },
+    tex2jax: { inlineMath: [["$","$"],["\\\\(","\\\\)"]], displayMath: [["$$","$$"],["\\[","\\]"]], processEscapes: true },
+    TeX: $.extend({
+        noUndefined: {
+            attributes: {
+                mathcolor: "red",
+                mathbackground: "#FFEEEE",
+                mathsize: "90%"
+            }
+        },
+        Safe: {
+            allow: {
+                URLs: "safe",
+                classes: "safe",
+                cssIDs: "safe",
+                styles: "safe",
+                fontsize: "all"
+            }
+        }
+    }, undefined),
+    messageStyle: "none"
+});
+</script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mathjax" src="./CSDN-markdown编辑器_files/MathJax.js.下载"></script><style type="text/css">@media (min-width: 0px) {
+#wmd-input {
+   font-size: 16px;
+}
+#preview-contents {
+   font-size: 16px;
+}
+}@media (min-width: 600px) {
+#wmd-input {
+   font-size: 17px;
+}
+#preview-contents {
+   font-size: 17px;
+}
+}@media (min-width: 1200px) {
+#wmd-input {
+   font-size: 18px;
+}
+#preview-contents {
+   font-size: 18px;
+}
+}</style><style type="text/css">@keyframes working-indicator-bar0 {
+    0% { opacity:0.25; }
+    0.01% { opacity:0.25; }
+    0.02% { opacity:1; }
+    50.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}@-webkit-keyframes working-indicator-bar0 {
+    0% { opacity:0.25; }
+    0.01% { opacity:0.25; }
+    0.02% { opacity:1; }
+    50.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}@keyframes working-indicator-bar1 {
+    0% { opacity:0.25; }
+    20.01% { opacity:0.25; }
+    20.02% { opacity:1; }
+    70.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}@-webkit-keyframes working-indicator-bar1 {
+    0% { opacity:0.25; }
+    20.01% { opacity:0.25; }
+    20.02% { opacity:1; }
+    70.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}@keyframes working-indicator-bar2 {
+    0% { opacity:0.25; }
+    40.01% { opacity:0.25; }
+    40.02% { opacity:1; }
+    90.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}@-webkit-keyframes working-indicator-bar2 {
+    0% { opacity:0.25; }
+    40.01% { opacity:0.25; }
+    40.02% { opacity:1; }
+    90.01% { opacity:0.25; }
+    100% { opacity:0.25; }
+}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.4-beta-2') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">@font-face {font-family: MathJax_AMS; src: url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff?rev=2.4-beta-2') format('woff'), url('http://static.blog.csdn.net/public/res/bower-libs/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf?rev=2.4-beta-2') format('opentype')}
+</style></head>
+
+<body class=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>    
+    <script type="text/javascript">      
+        var ua = window.navigator.userAgent;
+        if (ua.indexOf("MSIE") >= 1) {
+            {
+                location.replace("/mdeditor/tip");
+            }
+        }
+    </script>
+
+        <script src="./CSDN-markdown编辑器_files/require.js.下载"></script>
+
+    <script fixed="true" id="toolbar-tpl-scriptId" prod="blog" skin="black" src="./CSDN-markdown编辑器_files/html.js.下载" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://write.blog.csdn.net/?ref=toolbar_logo" class="img blog-icon"></a></div>          <div class="pull-right login-wrap ">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="http://passport.csdn.net/account/mobileregister?ref=toolbar&amp;action=mobileRegister">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    </div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix" style="display:none;"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt style="border: none;"><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./CSDN-markdown编辑器_files/2_g382112762.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./CSDN-markdown编辑器_files/2_g382112762.jpg"></a></dt>                        <dd class="info" style="border: none;"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname">g382112762</a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-left" style="margin-left:132px; width:18px; height:27px; white-space:nowrap; overflow:hidden;"><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div id="chasnew123" class="hasnew" style="display: none;"></div>                <div id="cappsarea123" class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd> <a href="http://lib.csdn.net/?ref=toolbar" target="_blank">知识库</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                      <dd style="display:none"> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd style="display:none"> <a href="http://job.csdn.net/?ref=toolbar" target="_blank">JOB<img src="./CSDN-markdown编辑器_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="http://edu.csdn.net/?ref=toolbar" target="_blank">学院<img src="./CSDN-markdown编辑器_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                      <dd> <a href="http://mall.csdn.net/?ref=toolbar" target="_blank">C币兑换<img src="./CSDN-markdown编辑器_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>    
+
+    <div class="working-indicator"><div class="hide"><div class="bar" style="animation: working-indicator-bar0 0.7s linear infinite;"></div><div class="bar" style="animation: working-indicator-bar1 0.7s linear infinite;"></div><div class="bar" style="animation: working-indicator-bar2 0.7s linear infinite;"></div></div></div>
+    <div id="csdnEditor" class=" ltr" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden;"><div class="layout-wrapper-l1" style="transform: translate(0px, 0px); width: 1920px; height: 925px;">
+	<div class="layout-wrapper-l2" style="left: 0px; width: 1920px; height: 925px;">
+		<div class="navbar navbar-default">
+			<div class="navbar-inner">
+				<div class="buttons-dropdown dropdown hide">
+					<div class="nav">
+						<button class="btn btn-success" data-toggle="dropdown" title="" data-original-title="Show buttons">
+							<i class="icon-th-large"></i>
+						</button>
+						<div class="dropdown-menu">
+						</div>
+					</div>
+				</div>
+				
+				
+				<a class="btn btn-danger btn-lg btn-blog-publish" data-original-title="" title="">发表博客</a>
+				<!--<a class="btn btn-danger btn-lg btn-blog-publish" data-original-title="" title="">发表博客
+
+           <span class="send_bt_arrow" style="	border-top: 6px solid #fff;
+ border-left: 6px solid transparent;
+ border-right: 6px solid transparent;
+ border-bottom: 0;
+ vertical-align: -17px;
+ margin-left: 0px;"></span>
+					<ul class="send_bt_list" style="width: 120px;height: 78px;position: absolute;left: 0; bottom: -80px;padding: 0;margin: 0;background: #fff;color: #333333;
+ font-size: 14px;
+ font-weight: normal;z-index: 9999;list-style: none;display: none;">
+						<li class="send_bt_list_first" style="cursor: pointer;height: 35px;line-height: 50px;">普通发表</li>
+						<li class="send_bt_list_second" style="cursor: pointer;;height: 35px;line-height: 35px;">
+							发表并@博乐
+						</li>
+					</ul>
+
+
+				</a>-->
+				<script>
+					//				alert(1);
+					//					$(".btn-blog-publish").hover(
+					//
+					//						function () {
+					//							$(this).find("send_bt_list")[0].style.display="block";
+					//						},
+					//						function () {
+					//							$(this).find("send_bt_list")[0].style.display="none";
+					//						}
+					//					);
+
+				</script>
+				
+				
+				<ul class="nav pull-right right-buttons">
+					<li class="offline-status hide">
+						<div class="text-danger">
+							<i class="icon-attention-circled"></i>离线
+						</div>
+					</li>
+					<li class="extension-buttons" style="display:none"><div class="btn-group"><a class="btn btn-success button-publish" title="" data-original-title="Update document publication"><i class="icon-upload"></i></a></div></li>
+					<li>
+						<a class="btn btn-success" href="javascript:void(0);" style="" id="csdn-lock-editor-button" title="" data-original-title="锁定MarkDown编辑器">
+							<i class="icon-lock-open"></i>
+						</a>
+					</li>
+					<li>
+						<div class="dropdown">
+                            <span class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-original-title="" title="">
+                                博客管理
+                                <i class="icon-arrow-down"></i>
+                            </span>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/postedit?type=edit">切换到HTML编辑器</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/postlist">文章管理</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/category">类别管理</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/feedback">评论管理</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/configure">博客配置</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/configure/column">博客栏目</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/postlist/0/all/draft">草稿箱</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://write.blog.csdn.net/postlist/0/all/deleted">回收站</a>
+								</li>                               
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav left-buttons">
+					<li class="wmd-button-group1 btn-group"><li class="wmd-button btn btn-success" id="wmd-bold-button" title="" style="left: 0px;" data-original-title="加粗 &lt;strong&gt; Ctrl/Cmd+B"><span style="background-position: 0px 0px; display: none;"></span><i class="icon-bold"></i></li><li class="wmd-button btn btn-success" id="wmd-italic-button" title="" style="left: 0px;" data-original-title="斜体 &lt;em&gt; Ctrl/Cmd+I"><span style="background-position: -20px 0px; display: none;"></span><i class="icon-italic"></i></li><li class="wmd-button btn btn-success" id="wmd-link-button" title="" style="left: 0px;" data-original-title="Hyperlink &lt;a&gt; Ctrl/Cmd+L"><span style="background-position: -40px 0px; display: none;"></span><i class="icon-link"></i></li><li class="wmd-button btn btn-success" id="wmd-quote-button" title="" style="left: 0px;" data-original-title="引用 &lt;blockquote&gt; Ctrl/Cmd+Q"><span style="background-position: -60px 0px; display: none;"></span><i class="icon-quote"></i></li><li class="wmd-button btn btn-success" id="wmd-code-button" title="" style="left: 0px;" data-original-title="代码片 &lt;pre&gt;&lt;code&gt; Ctrl/Cmd+K"><span style="background-position: -80px 0px; display: none;"></span><i class="icon-code"></i></li><li class="wmd-button btn btn-success" id="wmd-image-button" title="" style="left: 0px;" data-original-title="图片 &lt;img&gt; Ctrl/Cmd+G"><span style="background-position: -100px 0px; display: none;"></span><i class="icon-picture"></i></li><li class="wmd-button btn btn-success" id="wmd-olist-button" title="" style="left: 0px;" data-original-title="有序列表 &lt;ol&gt; Ctrl/Cmd+O"><span style="background-position: -120px 0px; display: none;"></span><i class="icon-list-ordered"></i></li><li class="wmd-button btn btn-success" id="wmd-ulist-button" title="" style="left: 0px;" data-original-title="无序列表 &lt;ul&gt; Ctrl/Cmd+U"><span style="background-position: -140px 0px; display: none;"></span><i class="icon-list-unordered"></i></li><li class="wmd-button btn btn-success" id="wmd-heading-button" title="" style="left: 0px;" data-original-title="标题 &lt;h1&gt;/&lt;h2&gt; Ctrl/Cmd+H"><span style="background-position: -160px 0px; display: none;"></span><i class="icon-heading"></i></li><li class="wmd-button btn btn-success" id="wmd-hr-button" title="" style="left: 0px;" data-original-title="横线 &lt;hr&gt; Ctrl/Cmd+R"><span style="background-position: -180px 0px; display: none;"></span><i class="icon-line"></i></li><li class="wmd-button btn btn-success" id="wmd-undo-button" title="" style="left: 0px;" data-original-title="撤销 - Ctrl/Cmd+Z"><span style="background-position: -200px 0px; display: none;"></span><i class="icon-undo"></i></li><li class="wmd-button btn btn-success disabled" id="wmd-redo-button" title="" style="left: 0px;" data-original-title="重做 - Ctrl/Cmd+Y"><span style="background-position: -220px -20px; display: none;"></span><i class="icon-redo"></i></li></li>
+				</ul><ul class="nav left-buttons">
+					<li class="wmd-button-group2 btn-group">
+						<a class="btn btn-success btn-blog-new" title="" data-original-title="写新文章"><i class="icon-pencil"></i></a>
+						<a class="btn btn-success btn-blog-save changed" title="" data-original-title="保存到线上草稿箱"><i class="icon-disk"></i></a>
+						<a class="btn btn-success btn-blog-abstract" title="" data-original-title="生成摘要"><i class="icon-abstract"></i></a>
+						<a class="btn btn-success btn-blog-setting" title="" data-original-title="文章设置"><i class="icon-doc-setting"></i></a>
+					</li>
+				</ul><ul class="nav left-buttons">
+					<li class="wmd-button-group3 btn-group">
+						<a data-toggle="modal" data-target=".modal-import-url" class="btn btn-success btn-import-online" title="" data-original-title="从线上导入">
+							<i class="icon-earth"></i>
+						</a>
+						<a data-toggle="modal" data-target=".modal-import-harddrive-markdown" class="btn btn-success btn-import" title="" data-original-title="从本机导入">
+							<i class="icon-hdd"></i>
+						</a>
+						<a data-toggle="modal" data-target=".modal-export-doc" class="btn btn-success btn-export" title="" data-original-title="导出到本地">
+							<i class="icon-upload"></i>
+						</a>
+					</li>
+				</ul><ul class="nav left-buttons">
+					<li class="wmd-button-group5 btn-group">
+						<a class="btn btn-success btn-modal-helps" title="" data-original-title="Markdown语法帮助">
+							<i class="icon-help"></i>
+						</a>
+					</li>
+				</ul><ul class="nav pull-right title-container">
+					<li><a class="btn btn-success file-title-navbar" title="" data-placement="bottom" style="width: 1680px;" data-original-title="点击修改标题">欢迎使用CSDN-markdown编辑器</a></li>
+					<li>
+						<div class="input-file-title-container"><input type="text" maxlength="100" class="col-sm-4 form-control input-file-title hide" placeholder="文章标题" style="width: 1680px;"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="layout-wrapper-l3" style="top: 170px; width: 1920px; height: 755px;">
+			<pre id="wmd-input" class="form-control font-rich" style="width: 944px; height: 755px;"><div class="editor-content" contenteditable="true" style="padding-left: 35px; padding-right: 35px; padding-bottom: 695px;"><span id="wmd-input-section-103" class="wmd-input-section"></span><span id="wmd-input-section-5646" class="wmd-input-section"><span class="token h1"><span class="token md md-hash">#</span> 本文主要分析基于MultiQueue的Linux Block Layer层部分源码内容</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">当要写一个page页到底层设备时，需要通过<span class="token strong"><span class="token md md-strong">**</span>submit_bh<span class="token md md-strong">**</span></span>进行提交。该函数主要负责对初始化一个bio以及对其进行相关的封装处理。其函数调用主要的流程为：<span class="token strong"><span class="token md md-strong">**</span>submit_bh -&gt; submit_bh_wbc -&gt; submit_io -&gt;generic_make_request<span class="token md md-strong">**</span></span>。一旦bio进入<span class="token strong"><span class="token md md-strong">**</span>generic_make_request<span class="token md md-strong">**</span></span>则说明其将在块设备层中被进行相关处理工作。</span><span class="token lf">
+</span><span class="token p"><span class="token strong"><span class="token md md-strong">**</span>generic_make_request<span class="token md md-strong">**</span></span>函数如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-9517" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>blk_qc_t generic_make_request(struct bio *bio)<span class="token lf">
+</span>{<span class="token lf">
+</span>	struct bio_list bio_list_on_stack;<span class="token lf">
+</span>	blk_qc_t ret = BLK_QC_T_NONE;<span class="token lf">
+</span><span class="token lf">
+</span>	if (!generic_make_request_checks(bio))	//判断当前bio是否有效		gaocm<span class="token lf">
+</span>		goto out;<span class="token lf">
+</span>	if (current-&gt;bio_list) {<span class="token lf">
+</span>		bio_list_add(current-&gt;bio_list, bio);<span class="token lf">
+</span>		goto out;<span class="token lf">
+</span>	}<span class="token lf">
+</span>	//上述过程要求当前的make_request_fn每次只能被触发一次，因此，通过current-&gt;bio_list判断当前是否有bio在其中，若有则将当前这个加入到尾部等待被处理，若没有则可直接处理该bio   gaocm<span class="token lf">
+</span>	BUG_ON(bio-&gt;bi_next);<span class="token lf">
+</span>	bio_list_init(&amp;bio_list_on_stack);		//初始化该双向链表	gaocm<span class="token lf">
+</span>	current-&gt;bio_list = &amp;bio_list_on_stack;	//当前为NULL	gaocm<span class="token lf">
+</span>	do {<span class="token lf">
+</span>		struct request_queue *q = bdev_get_queue(bio-&gt;bi_bdev);	//获得bio对应的设备队列	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>		if (likely(blk_queue_enter(q, false) == 0)) {	//判断当前的设备队列是否有效能够响应该请求	gaocm<span class="token lf">
+</span>			ret = q-&gt;make_request_fn(q, bio);	//将bio进行进一步处理，放入块设备层的处理队列中	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>			blk_queue_exit(q);<span class="token lf">
+</span><span class="token lf">
+</span>			bio = bio_list_pop(current-&gt;bio_list);	<span class="token lf">
+</span>		} else {<span class="token lf">
+</span>			struct bio *bio_next = bio_list_pop(current-&gt;bio_list);<span class="token lf">
+</span><span class="token lf">
+</span>			bio_io_error(bio);<span class="token lf">
+</span>			bio = bio_next;<span class="token lf">
+</span>		}<span class="token lf">
+</span>	} while (bio);<span class="token lf">
+</span>	current-&gt;bio_list = NULL; /* deactivate */	//clear this bio list and make_request function is avalible again<span class="token lf">
+</span><span class="token lf">
+</span>out:<span class="token lf">
+</span>	return ret;<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">若当前的设备队列有效，则会调用<span class="token strong"><span class="token md md-strong">**</span>q-&gt;make_request_fn<span class="token md md-strong">**</span></span>函数处理该bio，将其放入块设备层处理队列中。</span><span class="token lf">
+</span><span class="token p"><span class="token strong"><span class="token md md-strong">**</span>q-&gt;make_request_fn<span class="token md md-strong">**</span></span>函数在一开始在<span class="token strong"><span class="token md md-strong">**</span>blk_queue_make_request<span class="token md md-strong">**</span></span>函数中被注册为<span class="token strong"><span class="token md md-strong">**</span>blk_queue_bio<span class="token md md-strong">**</span></span>函数</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p"><span class="token strong"><span class="token md md-strong">**</span>blk_queue_bio<span class="token md md-strong">**</span></span>函数如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-14021" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>static blk_qc_t blk_queue_bio(struct request_queue *q, struct bio *bio)<span class="token lf">
+</span>{<span class="token lf">
+</span>	const bool sync = !!(bio-&gt;bi_rw &amp; REQ_SYNC);<span class="token lf">
+</span>	struct blk_plug *plug;<span class="token lf">
+</span>	int el_ret, rw_flags, where = ELEVATOR_INSERT_SORT;<span class="token lf">
+</span>	struct request *req;<span class="token lf">
+</span>	unsigned int request_count = 0;<span class="token lf">
+</span><span class="token lf">
+</span>	blk_queue_bounce(q, &amp;bio);	//做DMA时的相关地址限制，可能该bio只能访问低端内存，因此需要将高端内存中的bio数据拷贝到低端内存中	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	blk_queue_split(q, &amp;bio, q-&gt;bio_split);	//判断当前的bio是否超过了预设最大处理大小，若是则进行拆分	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	//上面的函数处理后的bio已经是能够被处理的请求了，超出部分重新加入到generic_make_request被处理	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	if (bio_integrity_enabled(bio) &amp;&amp; bio_integrity_prep(bio)) {	//数据完整性判断	gaocm<span class="token lf">
+</span>		bio-&gt;bi_error = -EIO;<span class="token lf">
+</span>		bio_endio(bio);<span class="token lf">
+</span>		return BLK_QC_T_NONE;<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	if (bio-&gt;bi_rw &amp; (REQ_FLUSH | REQ_FUA)) {<span class="token lf">
+</span>		//若当前请求是属于屏障IO，即类似于日志类型数据，则要求调度器严格保证其顺序不能进行调度	gaocm<span class="token lf">
+</span>		spin_lock_irq(q-&gt;queue_lock);	//get the queue lock   gaocm<span class="token lf">
+</span>		where = ELEVATOR_INSERT_FLUSH;<span class="token lf">
+</span>		goto get_rq;<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	if (!blk_queue_nomerges(q)) {	//允许合并	gaocm<span class="token lf">
+</span>		if (blk_attempt_plug_merge(q, bio, &amp;request_count, NULL))		//在plug队列中进行合并操作	gaocm<span class="token lf">
+</span>			return BLK_QC_T_NONE;<span class="token lf">
+</span>	} else<span class="token lf">
+</span>		request_count = blk_plug_queued_count(q);	//判断当前plug queue中来自同一个设备队列的请求数  gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	spin_lock_irq(q-&gt;queue_lock);<span class="token lf">
+</span><span class="token lf">
+</span>	//若multiqueue被启用，则elv queue应该不再存在，该处理方法可能是为了避免elv queue中还有request? 	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	el_ret = elv_merge(q, &amp;req, bio);	//执行elv内的合并		gaocm<span class="token lf">
+</span>	if (el_ret == ELEVATOR_BACK_MERGE) {<span class="token lf">
+</span>		if (bio_attempt_back_merge(q, req, bio)) {<span class="token lf">
+</span>			elv_bio_merged(q, req, bio);<span class="token lf">
+</span>			if (!attempt_back_merge(q, req))<span class="token lf">
+</span>				elv_merged_request(q, req, el_ret);<span class="token lf">
+</span>			goto out_unlock;<span class="token lf">
+</span>		}<span class="token lf">
+</span>	} else if (el_ret == ELEVATOR_FRONT_MERGE) {<span class="token lf">
+</span>		if (bio_attempt_front_merge(q, req, bio)) {<span class="token lf">
+</span>			elv_bio_merged(q, req, bio);<span class="token lf">
+</span>			if (!attempt_front_merge(q, req))<span class="token lf">
+</span>				elv_merged_request(q, req, el_ret);<span class="token lf">
+</span>			goto out_unlock;<span class="token lf">
+</span>		}<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>get_rq:<span class="token lf">
+</span><span class="token lf">
+</span>	rw_flags = bio_data_dir(bio);	//获得bio的数据类型	gaocm<span class="token lf">
+</span>	if (sync)<span class="token lf">
+</span>		rw_flags |= REQ_SYNC;<span class="token lf">
+</span><span class="token lf">
+</span>	req = get_request(q, rw_flags, bio, GFP_NOIO);	//将bio转换为request  gaocm<span class="token lf">
+</span>	if (IS_ERR(req)) {<span class="token lf">
+</span>		bio-&gt;bi_error = PTR_ERR(req);<span class="token lf">
+</span>		bio_endio(bio);<span class="token lf">
+</span>		goto out_unlock;<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	init_request_from_bio(req, bio);	//convert bio to req 初始化该请求 gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	if (test_bit(QUEUE_FLAG_SAME_COMP, &amp;q-&gt;queue_flags))<span class="token lf">
+</span>		req-&gt;cpu = raw_smp_processor_id();		//获得该请求对应的cpu号  gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	plug = current-&gt;plug;<span class="token lf">
+</span>	if (plug) {		//如果有plug则加入plug队列否则直接加入elv队列	gaocm<span class="token lf">
+</span>		if (!request_count)<span class="token lf">
+</span>			trace_block_plug(q);<span class="token lf">
+</span>		else {<span class="token lf">
+</span>			if (request_count &gt;= BLK_MAX_REQUEST_COUNT) {	//plug队列用于累计请求，提高merge和效率	gaocm<span class="token lf">
+</span>				blk_flush_plug_list(plug, false);	//unplug 操作，将数据刷回到下一层队列	gaocm<span class="token lf">
+</span>				trace_block_plug(q);<span class="token lf">
+</span>			}<span class="token lf">
+</span>		}<span class="token lf">
+</span>		list_add_tail(&amp;req-&gt;queuelist, &amp;plug-&gt;list);	//加入到plug队列中	gaocm<span class="token lf">
+</span>		blk_account_io_start(req, true);<span class="token lf">
+</span>	} else {<span class="token lf">
+</span>		spin_lock_irq(q-&gt;queue_lock);<span class="token lf">
+</span>		add_acct_request(q, req, where);	//加入到elv中<span class="token lf">
+</span>		__blk_run_queue(q);<span class="token lf">
+</span>out_unlock:<span class="token lf">
+</span>		spin_unlock_irq(q-&gt;queue_lock);<span class="token lf">
+</span>	}<span class="token lf">
+</span>	return BLK_QC_T_NONE;<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">在该过程中，plug/unplug队列的作用主要在于累积请求用于提高合并的效率，一旦请求数量达到BLK<span class="token em"><span class="token md md-em md-start">_</span>MAX<span class="token md md-em md-close">_</span></span>REQUEST_COUNT则将进行unplug操作，即将请求发送到下一层处理队列中，而我们在本文中针对讨论MultiQueue，则接下来unplug操作的请求将会被刷如MultiQueue队列中。该函数为<span class="token strong"><span class="token md md-strong">**</span>blk_flush_plug_list<span class="token md md-strong">**</span></span>，其描述如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-15997" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>void blk_flush_plug_list(struct blk_plug *plug, bool from_schedule)	//from_scheduler: true来自于内核调度，同步进行unplug；false 来自于达到数量阈值，异步进行unplug   gaocm<span class="token lf">
+</span>{<span class="token lf">
+</span>	struct request_queue *q;<span class="token lf">
+</span>	unsigned long flags;<span class="token lf">
+</span>	struct request *rq;<span class="token lf">
+</span>	LIST_HEAD(list);	//生成list双向链表	gaocm<span class="token lf">
+</span>	unsigned int depth;<span class="token lf">
+</span><span class="token lf">
+</span>	flush_plug_callbacks(plug, from_schedule);<span class="token lf">
+</span><span class="token lf">
+</span>	if (!list_empty(&amp;plug-&gt;mq_list))	//判断当前plug上是否有发送至software queue的实体    gaocm<span class="token lf">
+</span>		blk_mq_flush_plug_list(plug, from_schedule);	//将其加入Multiqueue的software queue中 gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	if (list_empty(&amp;plug-&gt;list))<span class="token lf">
+</span>		return;<span class="token lf">
+</span><span class="token lf">
+</span>	list_splice_init(&amp;plug-&gt;list, &amp;list);	//将plug-&gt;list加入到list后，并初始化	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	list_sort(NULL, &amp;list, plug_rq_cmp);	//将list中的属于同一个队列的排序到一批，并每一批同一个队列中的请求按照请求地址排序	gaocm<span class="token lf">
+</span>	//该list_sort函数是为了提高下一步将请求发放至不同队列中的效率	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	q = NULL;<span class="token lf">
+</span>	depth = 0;<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * Save and disable interrupts here, to avoid doing it for every<span class="token lf">
+</span>	 * queue lock we have to take.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	local_irq_save(flags);<span class="token lf">
+</span>	while (!list_empty(&amp;list)) {<span class="token lf">
+</span>		rq = list_entry_rq(list.next);<span class="token lf">
+</span>		list_del_init(&amp;rq-&gt;queuelist);<span class="token lf">
+</span>		BUG_ON(!rq-&gt;q);<span class="token lf">
+</span>		if (rq-&gt;q != q) {<span class="token lf">
+</span>			/*<span class="token lf">
+</span>			 * This drops the queue lock<span class="token lf">
+</span>			 */<span class="token lf">
+</span>			if (q)<span class="token lf">
+</span>				queue_unplugged(q, depth, from_schedule);<span class="token lf">
+</span>			q = rq-&gt;q;<span class="token lf">
+</span>			depth = 0;<span class="token lf">
+</span>			spin_lock(q-&gt;queue_lock);<span class="token lf">
+</span>		}<span class="token lf">
+</span><span class="token lf">
+</span>		/*<span class="token lf">
+</span>		 * Short-circuit if @q is dead<span class="token lf">
+</span>		 */<span class="token lf">
+</span>		if (unlikely(blk_queue_dying(q))) {<span class="token lf">
+</span>			__blk_end_request_all(rq, -ENODEV);<span class="token lf">
+</span>			continue;<span class="token lf">
+</span>		}<span class="token lf">
+</span><span class="token lf">
+</span>		/*<span class="token lf">
+</span>		 * rq is already accounted, so use raw insert<span class="token lf">
+</span>		 */<span class="token lf">
+</span>		if (rq-&gt;cmd_flags &amp; (REQ_FLUSH | REQ_FUA))<span class="token lf">
+</span>			__elv_add_request(q, rq, ELEVATOR_INSERT_FLUSH);<span class="token lf">
+</span>		else<span class="token lf">
+</span>			__elv_add_request(q, rq, ELEVATOR_INSERT_SORT_MERGE);<span class="token lf">
+</span><span class="token lf">
+</span>		depth++;<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	if (q)<span class="token lf">
+</span>		queue_unplugged(q, depth, from_schedule);<span class="token lf">
+</span><span class="token lf">
+</span>	local_irq_restore(flags);<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">到这一步过，请求将会通过unplug操作被<span class="token strong"><span class="token md md-strong">**</span>blk_mq_flush_plug_list<span class="token md md-strong">**</span></span>函数所处理，该函数将会把请求加入到不同的software queue中。</span><span class="token lf">
+</span><span class="token p"><span class="token strong"><span class="token md md-strong">**</span>blk_mq_flush_plug_list<span class="token md md-strong">**</span></span>函数描述如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-16730" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>void blk_mq_flush_plug_list(struct blk_plug *plug, bool from_schedule)<span class="token lf">
+</span>{<span class="token lf">
+</span>	struct blk_mq_ctx *this_ctx;<span class="token lf">
+</span>	struct request_queue *this_q;<span class="token lf">
+</span>	struct request *rq;<span class="token lf">
+</span>	LIST_HEAD(list);	//生成名为list的双向链表<span class="token lf">
+</span>	LIST_HEAD(ctx_list);	//是否是一个关于software queue的双向链表<span class="token lf">
+</span>	unsigned int depth;<span class="token lf">
+</span><span class="token lf">
+</span>	list_splice_init(&amp;plug-&gt;mq_list, &amp;list);	//将mq_list插入到list之后并初始化<span class="token lf">
+</span><span class="token lf">
+</span>	list_sort(NULL, &amp;list, plug_ctx_cmp);	//按照software queue顺序或者请求位置进行排序<span class="token lf">
+</span>	//排序的一大部分原因在于将所有属于同一个software queue的请求放在一起，便于下面将请求加入到software queue的过程<span class="token lf">
+</span><span class="token lf">
+</span>	this_q = NULL;<span class="token lf">
+</span>	this_ctx = NULL;<span class="token lf">
+</span>	depth = 0;<span class="token lf">
+</span><span class="token lf">
+</span>	while (!list_empty(&amp;list)) {<span class="token lf">
+</span>		rq = list_entry_rq(list.next);<span class="token lf">
+</span>		list_del_init(&amp;rq-&gt;queuelist);	//移走该节点，并对其初始化，即将其前后指针均指向自己<span class="token lf">
+</span>		BUG_ON(!rq-&gt;q);<span class="token lf">
+</span>		if (rq-&gt;mq_ctx != this_ctx) {<span class="token lf">
+</span>			if (this_ctx) {<span class="token lf">
+</span>				blk_mq_insert_requests(this_q, this_ctx,<span class="token lf">
+</span>							&amp;ctx_list, depth,<span class="token lf">
+</span>							from_schedule);		//insert this ctx into software queue<span class="token lf">
+</span>			}<span class="token lf">
+</span>		//如果发现某一个与之前的rq不属于用一个mq，则将之前ctx_list中的rq全部插入到其对应的software queue中<span class="token lf">
+</span>			this_ctx = rq-&gt;mq_ctx;<span class="token lf">
+</span>			this_q = rq-&gt;q;<span class="token lf">
+</span>			depth = 0;<span class="token lf">
+</span>		}<span class="token lf">
+</span><span class="token lf">
+</span>		depth++;<span class="token lf">
+</span>		list_add_tail(&amp;rq-&gt;queuelist, &amp;ctx_list);	//将rq-&gt;queuelist即双向链表节点插入到software queue的ctx中<span class="token lf">
+</span>		//所有同属于这个mq_ctx的请求都将加入到ctx_list中<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	if (this_ctx) {<span class="token lf">
+</span>		blk_mq_insert_requests(this_q, this_ctx, &amp;ctx_list, depth,<span class="token lf">
+</span>				       from_schedule);<span class="token lf">
+</span>	}<span class="token lf">
+</span>	//将剩余ctx_list中的rq加入到对应的software queue中<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">在上述函数中，请求通过<span class="token strong"><span class="token md md-strong">**</span>blk_mq_insert_request<span class="token md md-strong">**</span></span>函数加入到了不同的software queue中。</span><span class="token lf">
+</span><span class="token p"><span class="token strong"><span class="token md md-strong">**</span>blk_mq_insert_request<span class="token md md-strong">**</span></span>函数描述如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-17200" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>static void blk_mq_insert_requests(struct request_queue *q,<span class="token lf">
+</span>				     struct blk_mq_ctx *ctx,<span class="token lf">
+</span>				     struct list_head *list,<span class="token lf">
+</span>				     int depth,<span class="token lf">
+</span>				     bool from_schedule)<span class="token lf">
+</span>{<span class="token lf">
+</span>	struct blk_mq_hw_ctx *hctx;		//hardware queue gaocm<span class="token lf">
+</span>	struct blk_mq_ctx *current_ctx;<span class="token lf">
+</span><span class="token lf">
+</span>	trace_block_unplug(q, depth, !from_schedule);<span class="token lf">
+</span><span class="token lf">
+</span>	current_ctx = blk_mq_get_ctx(q);	//当前的q已经转换为software queue，该操作获得当前这个software queue的上下文环境	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	if (!cpu_online(ctx-&gt;cpu))		//判断该software queue绑定的cpu是否在线	gaocm<span class="token lf">
+</span>		ctx = current_ctx;<span class="token lf">
+</span>	hctx = q-&gt;mq_ops-&gt;map_queue(q, ctx-&gt;cpu);	//根据该softwarequeue的映射关系，确定其对应的hardware queue并获得其上下文环境		gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	spin_lock(&amp;ctx-&gt;lock);		//获得software queue的锁	gaocm<span class="token lf">
+</span>	while (!list_empty(list)) {<span class="token lf">
+</span>		struct request *rq;<span class="token lf">
+</span><span class="token lf">
+</span>		rq = list_first_entry(list, struct request, queuelist);	//获得其第一个请求对象	gaocm<span class="token lf">
+</span>		list_del_init(&amp;rq-&gt;queuelist);		//从该software queue对应的list中删除该请求，并重新初始化该list	gaocm<span class="token lf">
+</span>		rq-&gt;mq_ctx = ctx;<span class="token lf">
+</span>		__blk_mq_insert_req_list(hctx, ctx, rq, false);	//将该请求插入到software queue的末尾	gaocm<span class="token lf">
+</span>	}<span class="token lf">
+</span>	blk_mq_hctx_mark_pending(hctx, ctx);	//标记该software queue，说明其有请求将在hardware queue中被处理	gaocm<span class="token lf">
+</span>	spin_unlock(&amp;ctx-&gt;lock);<span class="token lf">
+</span><span class="token lf">
+</span>	blk_mq_run_hw_queue(hctx, from_schedule);	//运行hardware queue，将所有与该hardware queue映射的software queue中的请求进行处理	gaocm<span class="token lf">
+</span>	blk_mq_put_ctx(current_ctx);<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">在上述函数中，hardware queue通过<span class="token strong"><span class="token md md-strong">**</span>blk_mq_run_hw_queue<span class="token md md-strong">**</span></span>进一步对请求进行处理，该函数描述如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-17817" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>void blk_mq_run_hw_queue(struct blk_mq_hw_ctx *hctx, bool async)<span class="token lf">
+</span>{<span class="token lf">
+</span>	if (unlikely(test_bit(BLK_MQ_S_STOPPED, &amp;hctx-&gt;state) ||<span class="token lf">
+</span>	    !blk_mq_hw_queue_mapped(hctx)))<span class="token lf">
+</span>		return;<span class="token lf">
+</span><span class="token lf">
+</span>	if (!async) {   // false and run  gaocm<span class="token lf">
+</span>	//若async为flash则说明该处理是同步的，需要马上处理，若是异步则将该操作交由kblocked进行处理	gaocm<span class="token lf">
+</span>		int cpu = get_cpu();<span class="token lf">
+</span>		if (cpumask_test_cpu(cpu, hctx-&gt;cpumask)) {  // cpu is set in cpumask    gaocm<span class="token lf">
+</span>			__blk_mq_run_hw_queue(hctx);	//运行hardware queue	gaocm<span class="token lf">
+</span>			put_cpu();<span class="token lf">
+</span>			return;<span class="token lf">
+</span>		}<span class="token lf">
+</span><span class="token lf">
+</span>		put_cpu();<span class="token lf">
+</span>	}<span class="token lf">
+</span>	kblockd_schedule_delayed_work_on(blk_mq_hctx_next_cpu(hctx),<span class="token lf">
+</span>			&amp;hctx-&gt;run_work, 0);<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">在上述函数中，主要是进行相关处理的判断，为同步处理的情况下则进行<span class="token strong"><span class="token md md-strong">**</span><span class="token md md-strong">__</span>blk_mq_run_hw_queue<span class="token md md-strong">**</span></span>函数，描述如下：</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-19079" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>static void __blk_mq_run_hw_queue(struct blk_mq_hw_ctx *hctx)<span class="token lf">
+</span>{<span class="token lf">
+</span>	struct request_queue *q = hctx-&gt;queue;<span class="token lf">
+</span>	struct request *rq;<span class="token lf">
+</span>	LIST_HEAD(rq_list);		//初始化请求list的双向链表	gaocm<span class="token lf">
+</span>	LIST_HEAD(driver_list);<span class="token lf">
+</span>	struct list_head *dptr;<span class="token lf">
+</span>	int queued;<span class="token lf">
+</span><span class="token lf">
+</span>	WARN_ON(!cpumask_test_cpu(raw_smp_processor_id(), hctx-&gt;cpumask));<span class="token lf">
+</span><span class="token lf">
+</span>	if (unlikely(test_bit(BLK_MQ_S_STOPPED, &amp;hctx-&gt;state)))	//hardware queue状态判断	gaocm<span class="token lf">
+</span>		return;<span class="token lf">
+</span><span class="token lf">
+</span>	hctx-&gt;run++;<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * Touch any software queue that has pending entries.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	flush_busy_ctxs(hctx, &amp;rq_list);	//将所有标记了有请求将被该hardware queue处理的software queue的请求数据加入到rq_list中  gaocm<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * If we have previous entries on our dispatch list, grab them<span class="token lf">
+</span>	 * and stuff them at the front for more fair dispatch.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	if (!list_empty_careful(&amp;hctx-&gt;dispatch)) {	//若当前的hardware queue不空，即还有先前的请求待处理		gaocm<span class="token lf">
+</span>		spin_lock(&amp;hctx-&gt;lock);<span class="token lf">
+</span>		if (!list_empty(&amp;hctx-&gt;dispatch))<span class="token lf">
+</span>			list_splice_init(&amp;hctx-&gt;dispatch, &amp;rq_list);	//将hardware queue中先前未处理完地请求加入到rq_list前部(更公平)		gaocm<span class="token lf">
+</span>		spin_unlock(&amp;hctx-&gt;lock);<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * Start off with dptr being NULL, so we start the first request<span class="token lf">
+</span>	 * immediately, even if we have more pending.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	dptr = NULL;<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * Now process all the entries, sending them to the driver.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	queued = 0;<span class="token lf">
+</span>	while (!list_empty(&amp;rq_list)) {<span class="token lf">
+</span>		struct blk_mq_queue_data bd;<span class="token lf">
+</span>		int ret;<span class="token lf">
+</span><span class="token lf">
+</span>		rq = list_first_entry(&amp;rq_list, struct request, queuelist);	//获得请求	gaocm<span class="token lf">
+</span>		list_del_init(&amp;rq-&gt;queuelist);	//删除该请求	gaocm<span class="token lf">
+</span><span class="token lf">
+</span>		bd.rq = rq;<span class="token lf">
+</span>		bd.list = dptr;	//初始化一个链表	gaocm<span class="token lf">
+</span>		bd.last = list_empty(&amp;rq_list);<span class="token lf">
+</span><span class="token lf">
+</span>		//初始化mq data，并判断是否还有请求待处理   gaocm<span class="token lf">
+</span><span class="token lf">
+</span>		ret = q-&gt;mq_ops-&gt;queue_rq(hctx, &amp;bd);	//将当前请求请求数据加入到scsi queue中并返回相关结果	gaocm<span class="token lf">
+</span>		switch (ret) {<span class="token lf">
+</span>		case BLK_MQ_RQ_QUEUE_OK:<span class="token lf">
+</span>			queued++;<span class="token lf">
+</span>			continue;<span class="token lf">
+</span>		case BLK_MQ_RQ_QUEUE_BUSY:<span class="token lf">
+</span>			list_add(&amp;rq-&gt;queuelist, &amp;rq_list);		//当前无法加入到hardware queue中则重新放回rq_list	gaocm<span class="token lf">
+</span>			__blk_mq_requeue_request(rq);	//重新设定该请求的某些参数等		gaocm<span class="token lf">
+</span>			break;<span class="token lf">
+</span>		default:<span class="token lf">
+</span>			pr_err("blk-mq: bad return on queue: %d\n", ret);<span class="token lf">
+</span>		case BLK_MQ_RQ_QUEUE_ERROR:<span class="token lf">
+</span>			rq-&gt;errors = -EIO;<span class="token lf">
+</span>			blk_mq_end_request(rq, rq-&gt;errors);<span class="token lf">
+</span>			break;<span class="token lf">
+</span>		}<span class="token lf">
+</span><span class="token lf">
+</span>		if (ret == BLK_MQ_RQ_QUEUE_BUSY)	//说明当前hardware queue正忙，则不再加入请求	gaocm<span class="token lf">
+</span>			break;<span class="token lf">
+</span><span class="token lf">
+</span>		/*<span class="token lf">
+</span>		 * We've done the first request. If we have more than 1<span class="token lf">
+</span>		 * left in the list, set dptr to defer issue.<span class="token lf">
+</span>		 */<span class="token lf">
+</span>		if (!dptr &amp;&amp; rq_list.next != rq_list.prev)<span class="token lf">
+</span>			dptr = &amp;driver_list;<span class="token lf">
+</span>	}<span class="token lf">
+</span><span class="token lf">
+</span>	if (!queued)	//没有请求加入hardware queue 	gaocm<span class="token lf">
+</span>		hctx-&gt;dispatched[0]++;<span class="token lf">
+</span>	else if (queued &lt; (1 &lt;&lt; (BLK_MQ_MAX_DISPATCH_ORDER - 1)))<span class="token lf">
+</span>		hctx-&gt;dispatched[ilog2(queued) + 1]++;<span class="token lf">
+</span><span class="token lf">
+</span>	/*<span class="token lf">
+</span>	 * Any items that need requeuing? Stuff them into hctx-&gt;dispatch,<span class="token lf">
+</span>	 * that is where we will continue on next queue run.<span class="token lf">
+</span>	 */<span class="token lf">
+</span>	if (!list_empty(&amp;rq_list)) {<span class="token lf">
+</span>		spin_lock(&amp;hctx-&gt;lock);<span class="token lf">
+</span>		list_splice(&amp;rq_list, &amp;hctx-&gt;dispatch);	//若当前还有请求在rq_list中，则将这些请求重新放回dispatch queue中，等待下次处理并且避免丢失	gaocm<span class="token lf">
+</span>		spin_unlock(&amp;hctx-&gt;lock);<span class="token lf">
+</span>		/*<span class="token lf">
+</span>		 * the queue is expected stopped with BLK_MQ_RQ_QUEUE_BUSY, but<span class="token lf">
+</span>		 * it's possible the queue is stopped and restarted again<span class="token lf">
+</span>		 * before this. Queue restart will dispatch requests. And since<span class="token lf">
+</span>		 * requests in rq_list aren't added into hctx-&gt;dispatch yet,<span class="token lf">
+</span>		 * the requests in rq_list might get lost.<span class="token lf">
+</span>		 *<span class="token lf">
+</span>		 * blk_mq_run_hw_queue() already checks the STOPPED bit<span class="token lf">
+</span>		 **/<span class="token lf">
+</span>		blk_mq_run_hw_queue(hctx, true);	//说明当前hardware queue正忙，则调用该函数进行异步处理，交由kblocked处理	gaocm	<span class="token lf">
+</span>	}<span class="token lf">
+</span>}<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">在上述函数中，q-&gt;mq<span class="token em"><span class="token md md-em md-start">_</span>ops-&gt;queue<span class="token md md-em md-close">_</span></span>rq负责将请求下发至scsi层中，并返回对应的结果，而该blk<span class="token em"><span class="token md md-em md-start">_</span>mq<span class="token md md-em md-close">_</span></span>ops中的queue<span class="token em"><span class="token md md-em md-start">_</span>rq函数在drivers/scsi中被注册为scsi<span class="token md md-em md-close">_</span></span>queue_rq:</span><span class="token lf">
+</span></span><span id="wmd-input-section-19800" class="wmd-input-section"><span class="token pre gfm"><span class="token md md-pre">```</span><span class="token lf">
+</span>static struct blk_mq_ops scsi_mq_ops = {<span class="token lf">
+</span>	.map_queue	= blk_mq_map_queue,<span class="token lf">
+</span>	.queue_rq	= scsi_queue_rq,<span class="token lf">
+</span>	.complete	= scsi_softirq_done,<span class="token lf">
+</span>	.timeout	= scsi_timeout,<span class="token lf">
+</span>	.init_request	= scsi_init_request,<span class="token lf">
+</span>	.exit_request	= scsi_exit_request,<span class="token lf">
+</span>};<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token p">在scsi<span class="token em"><span class="token md md-em md-start">_</span>queue<span class="token md md-em md-close">_</span></span>rq函数中，请求将会被转化为scsi command，然后进一步发送到底层driver中。</span></span><span class="token lf">
+</span></div><div class="editor-margin" style="width: 35px;"></div></pre>
+			<div class="preview-panel" style="transform: translate(944px, 0px); width: 976px; height: 755px;">
+				<div class="layout-resizer layout-resizer-preview open" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: pan-y; height: 755px;"></div>
+				<div class="layout-toggler layout-toggler-navbar btn btn-info open" title="头部收起/展开" style="height: 60px;"><i class="icon-th"></i>
+				</div>
+				<div class="layout-toggler layout-toggler-preview btn btn-info open" title="" style="transform: translate(0px, 347.5px); height: 60px;" data-original-title="预览区显示/隐藏（可拖拽）"><i class="icon-none"></i></div>
+				<div class="preview-container" style="left: 32px; width: 944px; height: 755px;">
+					<div id="preview-contents" style="padding-left: 35px; padding-right: 35px; padding-bottom: 695px;">
+						<div id="wmd-preview" class="preview-content"></div>
+					<div id="wmd-preview-section-15938" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-15939" class="wmd-preview-section preview-content">
+
+<h1 id="本文主要分析基于multiqueue的linux-block-layer层部分源码内容">本文主要分析基于MultiQueue的Linux Block Layer层部分源码内容</h1>
+
+<p>当要写一个page页到底层设备时，需要通过<strong>submit_bh</strong>进行提交。该函数主要负责对初始化一个bio以及对其进行相关的封装处理。其函数调用主要的流程为：<strong>submit_bh -&gt; submit_bh_wbc -&gt; submit_io -&gt;generic_make_request</strong>。一旦bio进入<strong>generic_make_request</strong>则说明其将在块设备层中被进行相关处理工作。 <br>
+<strong>generic_make_request</strong>函数如下：</p>
+
+</div><div id="wmd-preview-section-15940" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs lasso">blk_qc_t generic_make_request(struct bio <span class="hljs-subst">*</span>bio)
+{
+    struct bio_list bio_list_on_stack;
+    blk_qc_t ret <span class="hljs-subst">=</span> BLK_QC_T_NONE;
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>generic_make_request_checks(bio))  <span class="hljs-comment">//判断当前bio是否有效       gaocm</span>
+        goto out;
+    <span class="hljs-keyword">if</span> (current<span class="hljs-subst">-&gt;</span>bio_list) {
+        bio_list_add(current<span class="hljs-subst">-&gt;</span>bio_list, bio);
+        goto out;
+    }
+    <span class="hljs-comment">//上述过程要求当前的make_request_fn每次只能被触发一次，因此，通过current-&gt;bio_list判断当前是否有bio在其中，若有则将当前这个加入到尾部等待被处理，若没有则可直接处理该bio   gaocm</span>
+    BUG_ON(bio<span class="hljs-subst">-&gt;</span>bi_next);
+    bio_list_init(<span class="hljs-subst">&amp;</span>bio_list_on_stack);      <span class="hljs-comment">//初始化该双向链表  gaocm</span>
+    current<span class="hljs-subst">-&gt;</span>bio_list <span class="hljs-subst">=</span> <span class="hljs-subst">&amp;</span>bio_list_on_stack; <span class="hljs-comment">//当前为NULL   gaocm</span>
+    <span class="hljs-keyword">do</span> {
+        struct request_queue <span class="hljs-subst">*</span>q <span class="hljs-subst">=</span> bdev_get_queue(bio<span class="hljs-subst">-&gt;</span>bi_bdev); <span class="hljs-comment">//获得bio对应的设备队列  gaocm</span>
+
+        <span class="hljs-keyword">if</span> (likely(blk_queue_enter(q, <span class="hljs-literal">false</span>) <span class="hljs-subst">==</span> <span class="hljs-number">0</span>)) {   <span class="hljs-comment">//判断当前的设备队列是否有效能够响应该请求  gaocm</span>
+            ret <span class="hljs-subst">=</span> q<span class="hljs-subst">-&gt;</span>make_request_fn(q, bio);   <span class="hljs-comment">//将bio进行进一步处理，放入块设备层的处理队列中  gaocm</span>
+
+            blk_queue_exit(q);
+
+            bio <span class="hljs-subst">=</span> bio_list_pop(current<span class="hljs-subst">-&gt;</span>bio_list);  
+        } <span class="hljs-keyword">else</span> {
+            struct bio <span class="hljs-subst">*</span>bio_next <span class="hljs-subst">=</span> bio_list_pop(current<span class="hljs-subst">-&gt;</span>bio_list);
+
+            bio_io_error(bio);
+            bio <span class="hljs-subst">=</span> bio_next;
+        }
+    } <span class="hljs-keyword">while</span> (bio);
+    current<span class="hljs-subst">-&gt;</span>bio_list <span class="hljs-subst">=</span> <span class="hljs-built_in">NULL</span>; <span class="hljs-comment">/* deactivate */</span>  <span class="hljs-comment">//clear this bio list and make_request function is avalible again</span>
+
+out:
+    <span class="hljs-keyword">return</span> ret;
+}</code></pre>
+
+<p>若当前的设备队列有效，则会调用<strong>q-&gt;make_request_fn</strong>函数处理该bio，将其放入块设备层处理队列中。 <br>
+<strong>q-&gt;make_request_fn</strong>函数在一开始在<strong>blk_queue_make_request</strong>函数中被注册为<strong>blk_queue_bio</strong>函数</p>
+
+<p><strong>blk_queue_bio</strong>函数如下：</p>
+
+</div><div id="wmd-preview-section-15941" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs lasso">static blk_qc_t blk_queue_bio(struct request_queue <span class="hljs-subst">*</span>q, struct bio <span class="hljs-subst">*</span>bio)
+{
+    const bool sync <span class="hljs-subst">=</span> <span class="hljs-subst">!!</span>(bio<span class="hljs-subst">-&gt;</span>bi_rw <span class="hljs-subst">&amp;</span> REQ_SYNC);
+    struct blk_plug <span class="hljs-subst">*</span>plug;
+    int el_ret, rw_flags, <span class="hljs-keyword">where</span> <span class="hljs-subst">=</span> ELEVATOR_INSERT_SORT;
+    struct request <span class="hljs-subst">*</span>req;
+    unsigned int request_count <span class="hljs-subst">=</span> <span class="hljs-number">0</span>;
+
+    blk_queue_bounce(q, <span class="hljs-subst">&amp;</span>bio);  <span class="hljs-comment">//做DMA时的相关地址限制，可能该bio只能访问低端内存，因此需要将高端内存中的bio数据拷贝到低端内存中  gaocm</span>
+
+    blk_queue_split(q, <span class="hljs-subst">&amp;</span>bio, q<span class="hljs-subst">-&gt;</span>bio_split); <span class="hljs-comment">//判断当前的bio是否超过了预设最大处理大小，若是则进行拆分 gaocm</span>
+
+    <span class="hljs-comment">//上面的函数处理后的bio已经是能够被处理的请求了，超出部分重新加入到generic_make_request被处理 gaocm</span>
+
+    <span class="hljs-keyword">if</span> (bio_integrity_enabled(bio) <span class="hljs-subst">&amp;&amp;</span> bio_integrity_prep(bio)) {    <span class="hljs-comment">//数据完整性判断   gaocm</span>
+        bio<span class="hljs-subst">-&gt;</span>bi_error <span class="hljs-subst">=</span> <span class="hljs-attribute">-EIO</span>;
+        bio_endio(bio);
+        <span class="hljs-keyword">return</span> BLK_QC_T_NONE;
+    }
+
+    <span class="hljs-keyword">if</span> (bio<span class="hljs-subst">-&gt;</span>bi_rw <span class="hljs-subst">&amp;</span> (REQ_FLUSH <span class="hljs-subst">|</span> REQ_FUA)) {
+        <span class="hljs-comment">//若当前请求是属于屏障IO，即类似于日志类型数据，则要求调度器严格保证其顺序不能进行调度   gaocm</span>
+        spin_lock_irq(q<span class="hljs-subst">-&gt;</span>queue_lock);   <span class="hljs-comment">//get the queue lock   gaocm</span>
+        <span class="hljs-keyword">where</span> <span class="hljs-subst">=</span> ELEVATOR_INSERT_FLUSH;
+        goto get_rq;
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>blk_queue_nomerges(q)) {   <span class="hljs-comment">//允许合并  gaocm</span>
+        <span class="hljs-keyword">if</span> (blk_attempt_plug_merge(q, bio, <span class="hljs-subst">&amp;</span>request_count, <span class="hljs-built_in">NULL</span>))       <span class="hljs-comment">//在plug队列中进行合并操作    gaocm</span>
+            <span class="hljs-keyword">return</span> BLK_QC_T_NONE;
+    } <span class="hljs-keyword">else</span>
+        request_count <span class="hljs-subst">=</span> blk_plug_queued_count(q);   <span class="hljs-comment">//判断当前plug queue中来自同一个设备队列的请求数  gaocm</span>
+
+    spin_lock_irq(q<span class="hljs-subst">-&gt;</span>queue_lock);
+
+    <span class="hljs-comment">//若multiqueue被启用，则elv queue应该不再存在，该处理方法可能是为了避免elv queue中还有request?  gaocm</span>
+
+    el_ret <span class="hljs-subst">=</span> elv_merge(q, <span class="hljs-subst">&amp;</span>req, bio);   <span class="hljs-comment">//执行elv内的合并     gaocm</span>
+    <span class="hljs-keyword">if</span> (el_ret <span class="hljs-subst">==</span> ELEVATOR_BACK_MERGE) {
+        <span class="hljs-keyword">if</span> (bio_attempt_back_merge(q, req, bio)) {
+            elv_bio_merged(q, req, bio);
+            <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>attempt_back_merge(q, req))
+                elv_merged_request(q, req, el_ret);
+            goto out_unlock;
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (el_ret <span class="hljs-subst">==</span> ELEVATOR_FRONT_MERGE) {
+        <span class="hljs-keyword">if</span> (bio_attempt_front_merge(q, req, bio)) {
+            elv_bio_merged(q, req, bio);
+            <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>attempt_front_merge(q, req))
+                elv_merged_request(q, req, el_ret);
+            goto out_unlock;
+        }
+    }
+
+get_rq:
+
+    rw_flags <span class="hljs-subst">=</span> bio_data_dir(bio);   <span class="hljs-comment">//获得bio的数据类型    gaocm</span>
+    <span class="hljs-keyword">if</span> (sync)
+        rw_flags <span class="hljs-subst">|=</span> REQ_SYNC;
+
+    req <span class="hljs-subst">=</span> get_request(q, rw_flags, bio, GFP_NOIO);  <span class="hljs-comment">//将bio转换为request  gaocm</span>
+    <span class="hljs-keyword">if</span> (IS_ERR(req)) {
+        bio<span class="hljs-subst">-&gt;</span>bi_error <span class="hljs-subst">=</span> PTR_ERR(req);
+        bio_endio(bio);
+        goto out_unlock;
+    }
+
+    init_request_from_bio(req, bio);    <span class="hljs-comment">//convert bio to req 初始化该请求 gaocm</span>
+
+    <span class="hljs-keyword">if</span> (test_bit(QUEUE_FLAG_SAME_COMP, <span class="hljs-subst">&amp;</span>q<span class="hljs-subst">-&gt;</span>queue_flags))
+        req<span class="hljs-subst">-&gt;</span>cpu <span class="hljs-subst">=</span> raw_smp_processor_id();      <span class="hljs-comment">//获得该请求对应的cpu号  gaocm</span>
+
+    plug <span class="hljs-subst">=</span> current<span class="hljs-subst">-&gt;</span>plug;
+    <span class="hljs-keyword">if</span> (plug) {     <span class="hljs-comment">//如果有plug则加入plug队列否则直接加入elv队列   gaocm</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>request_count)
+            trace_block_plug(q);
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (request_count <span class="hljs-subst">&gt;=</span> BLK_MAX_REQUEST_COUNT) {   <span class="hljs-comment">//plug队列用于累计请求，提高merge和效率   gaocm</span>
+                blk_flush_plug_list(plug, <span class="hljs-literal">false</span>);   <span class="hljs-comment">//unplug 操作，将数据刷回到下一层队列 gaocm</span>
+                trace_block_plug(q);
+            }
+        }
+        list_add_tail(<span class="hljs-subst">&amp;</span>req<span class="hljs-subst">-&gt;</span>queuelist, <span class="hljs-subst">&amp;</span>plug<span class="hljs-subst">-&gt;</span><span class="hljs-built_in">list</span>);    <span class="hljs-comment">//加入到plug队列中    gaocm</span>
+        blk_account_io_start(req, <span class="hljs-literal">true</span>);
+    } <span class="hljs-keyword">else</span> {
+        spin_lock_irq(q<span class="hljs-subst">-&gt;</span>queue_lock);
+        add_acct_request(q, req, <span class="hljs-keyword">where</span>);    <span class="hljs-comment">//加入到elv中</span>
+        __blk_run_queue(q);
+out_unlock:
+        spin_unlock_irq(q<span class="hljs-subst">-&gt;</span>queue_lock);
+    }
+    <span class="hljs-keyword">return</span> BLK_QC_T_NONE;
+}</code></pre>
+
+<p>在该过程中，plug/unplug队列的作用主要在于累积请求用于提高合并的效率，一旦请求数量达到BLK_MAX_REQUEST_COUNT则将进行unplug操作，即将请求发送到下一层处理队列中，而我们在本文中针对讨论MultiQueue，则接下来unplug操作的请求将会被刷如MultiQueue队列中。该函数为<strong>blk_flush_plug_list</strong>，其描述如下：</p>
+
+</div><div id="wmd-preview-section-15997" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-literal">void</span> blk_flush_plug_list(struct blk_plug <span class="hljs-subst">*</span>plug, bool from_schedule) <span class="hljs-comment">//from_scheduler: true来自于内核调度，同步进行unplug；false 来自于达到数量阈值，异步进行unplug   gaocm</span>
+{
+    struct request_queue <span class="hljs-subst">*</span>q;
+    unsigned long flags;
+    struct request <span class="hljs-subst">*</span>rq;
+    LIST_HEAD(<span class="hljs-built_in">list</span>);    <span class="hljs-comment">//生成list双向链表    gaocm</span>
+    unsigned int depth;
+
+    flush_plug_callbacks(plug, from_schedule);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-subst">!</span>list_empty(<span class="hljs-subst">&amp;</span>plug<span class="hljs-subst">-&gt;</span>mq_list))    <span class="hljs-comment">//判断当前plug上是否有发送至software queue的实体    gaocm</span>
+        blk_mq_flush_plug_list(plug, from_schedule);    <span class="hljs-comment">//将其加入Multiqueue的software queue中 gaocm</span>
+
+    <span class="hljs-keyword">if</span> (list_empty(<span class="hljs-subst">&amp;</span>plug<span class="hljs-subst">-&gt;</span><span class="hljs-built_in">list</span>))
+        <span class="hljs-keyword">return</span>;
+
+    list_splice_init(<span class="hljs-subst">&amp;</span>plug<span class="hljs-subst">-&gt;</span><span class="hljs-built_in">list</span>, <span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>);   <span class="hljs-comment">//将plug-&gt;list加入到list后，并初始化  gaocm</span>
+
+    list_sort(<span class="hljs-built_in">NULL</span>, <span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>, plug_rq_cmp);    <span class="hljs-comment">//将list中的属于同一个队列的排序到一批，并每一批同一个队列中的请求按照请求地址排序    gaocm</span>
+    <span class="hljs-comment">//该list_sort函数是为了提高下一步将请求发放至不同队列中的效率    gaocm</span>
+
+    q <span class="hljs-subst">=</span> <span class="hljs-built_in">NULL</span>;
+    depth <span class="hljs-subst">=</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">/*
+     * Save and disable interrupts here, to avoid doing it for every
+     * queue lock we have to take.
+     */</span>
+    local_irq_save(flags);
+    <span class="hljs-keyword">while</span> (<span class="hljs-subst">!</span>list_empty(<span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>)) {
+        rq <span class="hljs-subst">=</span> list_entry_rq(<span class="hljs-built_in">list</span><span class="hljs-built_in">.</span>next);
+        list_del_init(<span class="hljs-subst">&amp;</span>rq<span class="hljs-subst">-&gt;</span>queuelist);
+        BUG_ON(<span class="hljs-subst">!</span>rq<span class="hljs-subst">-&gt;</span>q);
+        <span class="hljs-keyword">if</span> (rq<span class="hljs-subst">-&gt;</span>q <span class="hljs-subst">!=</span> q) {
+            <span class="hljs-comment">/*
+             * This drops the queue lock
+             */</span>
+            <span class="hljs-keyword">if</span> (q)
+                queue_unplugged(q, depth, from_schedule);
+            q <span class="hljs-subst">=</span> rq<span class="hljs-subst">-&gt;</span>q;
+            depth <span class="hljs-subst">=</span> <span class="hljs-number">0</span>;
+            spin_lock(q<span class="hljs-subst">-&gt;</span>queue_lock);
+        }
+
+        <span class="hljs-comment">/*
+         * Short-circuit if @q is dead
+         */</span>
+        <span class="hljs-keyword">if</span> (unlikely(blk_queue_dying(q))) {
+            __blk_end_request_all(rq, <span class="hljs-attribute">-ENODEV</span>);
+            continue;
+        }
+
+        <span class="hljs-comment">/*
+         * rq is already accounted, so use raw insert
+         */</span>
+        <span class="hljs-keyword">if</span> (rq<span class="hljs-subst">-&gt;</span>cmd_flags <span class="hljs-subst">&amp;</span> (REQ_FLUSH <span class="hljs-subst">|</span> REQ_FUA))
+            __elv_add_request(q, rq, ELEVATOR_INSERT_FLUSH);
+        <span class="hljs-keyword">else</span>
+            __elv_add_request(q, rq, ELEVATOR_INSERT_SORT_MERGE);
+
+        depth<span class="hljs-subst">++</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (q)
+        queue_unplugged(q, depth, from_schedule);
+
+    local_irq_restore(flags);
+}</code></pre>
+
+<p>到这一步过，请求将会通过unplug操作被<strong>blk_mq_flush_plug_list</strong>函数所处理，该函数将会把请求加入到不同的software queue中。 <br>
+<strong>blk_mq_flush_plug_list</strong>函数描述如下：</p>
+
+</div><div id="wmd-preview-section-16730" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-literal">void</span> blk_mq_flush_plug_list(struct blk_plug <span class="hljs-subst">*</span>plug, bool from_schedule)
+{
+    struct blk_mq_ctx <span class="hljs-subst">*</span>this_ctx;
+    struct request_queue <span class="hljs-subst">*</span>this_q;
+    struct request <span class="hljs-subst">*</span>rq;
+    LIST_HEAD(<span class="hljs-built_in">list</span>);    <span class="hljs-comment">//生成名为list的双向链表</span>
+    LIST_HEAD(ctx_list);    <span class="hljs-comment">//是否是一个关于software queue的双向链表</span>
+    unsigned int depth;
+
+    list_splice_init(<span class="hljs-subst">&amp;</span>plug<span class="hljs-subst">-&gt;</span>mq_list, <span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>);    <span class="hljs-comment">//将mq_list插入到list之后并初始化</span>
+
+    list_sort(<span class="hljs-built_in">NULL</span>, <span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>, plug_ctx_cmp);   <span class="hljs-comment">//按照software queue顺序或者请求位置进行排序</span>
+    <span class="hljs-comment">//排序的一大部分原因在于将所有属于同一个software queue的请求放在一起，便于下面将请求加入到software queue的过程</span>
+
+    this_q <span class="hljs-subst">=</span> <span class="hljs-built_in">NULL</span>;
+    this_ctx <span class="hljs-subst">=</span> <span class="hljs-built_in">NULL</span>;
+    depth <span class="hljs-subst">=</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">while</span> (<span class="hljs-subst">!</span>list_empty(<span class="hljs-subst">&amp;</span><span class="hljs-built_in">list</span>)) {
+        rq <span class="hljs-subst">=</span> list_entry_rq(<span class="hljs-built_in">list</span><span class="hljs-built_in">.</span>next);
+        list_del_init(<span class="hljs-subst">&amp;</span>rq<span class="hljs-subst">-&gt;</span>queuelist);  <span class="hljs-comment">//移走该节点，并对其初始化，即将其前后指针均指向自己</span>
+        BUG_ON(<span class="hljs-subst">!</span>rq<span class="hljs-subst">-&gt;</span>q);
+        <span class="hljs-keyword">if</span> (rq<span class="hljs-subst">-&gt;</span>mq_ctx <span class="hljs-subst">!=</span> this_ctx) {
+            <span class="hljs-keyword">if</span> (this_ctx) {
+                blk_mq_insert_requests(this_q, this_ctx,
+                            <span class="hljs-subst">&amp;</span>ctx_list, depth,
+                            from_schedule);     <span class="hljs-comment">//insert this ctx into software queue</span>
+            }
+        <span class="hljs-comment">//如果发现某一个与之前的rq不属于用一个mq，则将之前ctx_list中的rq全部插入到其对应的software queue中</span>
+            this_ctx <span class="hljs-subst">=</span> rq<span class="hljs-subst">-&gt;</span>mq_ctx;
+            this_q <span class="hljs-subst">=</span> rq<span class="hljs-subst">-&gt;</span>q;
+            depth <span class="hljs-subst">=</span> <span class="hljs-number">0</span>;
+        }
+
+        depth<span class="hljs-subst">++</span>;
+        list_add_tail(<span class="hljs-subst">&amp;</span>rq<span class="hljs-subst">-&gt;</span>queuelist, <span class="hljs-subst">&amp;</span>ctx_list);   <span class="hljs-comment">//将rq-&gt;queuelist即双向链表节点插入到software queue的ctx中</span>
+        <span class="hljs-comment">//所有同属于这个mq_ctx的请求都将加入到ctx_list中</span>
+    }
+
+    <span class="hljs-keyword">if</span> (this_ctx) {
+        blk_mq_insert_requests(this_q, this_ctx, <span class="hljs-subst">&amp;</span>ctx_list, depth,
+                       from_schedule);
+    }
+    <span class="hljs-comment">//将剩余ctx_list中的rq加入到对应的software queue中</span>
+}</code></pre>
+
+<p>在上述函数中，请求通过<strong>blk_mq_insert_request</strong>函数加入到了不同的software queue中。 <br>
+<strong>blk_mq_insert_request</strong>函数描述如下：</p>
+
+</div><div id="wmd-preview-section-17200" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs cpp"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> blk_mq_insert_requests(<span class="hljs-keyword">struct</span> request_queue *q,
+                     <span class="hljs-keyword">struct</span> blk_mq_ctx *ctx,
+                     <span class="hljs-keyword">struct</span> list_head *<span class="hljs-built_in">list</span>,
+                     <span class="hljs-keyword">int</span> depth,
+                     <span class="hljs-keyword">bool</span> from_schedule)
+{
+    <span class="hljs-keyword">struct</span> blk_mq_hw_ctx *hctx;     <span class="hljs-comment">//hardware queue gaocm</span>
+    <span class="hljs-keyword">struct</span> blk_mq_ctx *current_ctx;
+
+    trace_block_unplug(q, depth, !from_schedule);
+
+    current_ctx = blk_mq_get_ctx(q);    <span class="hljs-comment">//当前的q已经转换为software queue，该操作获得当前这个software queue的上下文环境 gaocm</span>
+
+    <span class="hljs-keyword">if</span> (!cpu_online(ctx-&gt;cpu))      <span class="hljs-comment">//判断该software queue绑定的cpu是否在线   gaocm</span>
+        ctx = current_ctx;
+    hctx = q-&gt;mq_ops-&gt;map_queue(q, ctx-&gt;cpu);   <span class="hljs-comment">//根据该softwarequeue的映射关系，确定其对应的hardware queue并获得其上下文环境       gaocm</span>
+
+    spin_lock(&amp;ctx-&gt;lock);      <span class="hljs-comment">//获得software queue的锁    gaocm</span>
+    <span class="hljs-keyword">while</span> (!list_empty(<span class="hljs-built_in">list</span>)) {
+        <span class="hljs-keyword">struct</span> request *rq;
+
+        rq = list_first_entry(<span class="hljs-built_in">list</span>, <span class="hljs-keyword">struct</span> request, queuelist); <span class="hljs-comment">//获得其第一个请求对象    gaocm</span>
+        list_del_init(&amp;rq-&gt;queuelist);      <span class="hljs-comment">//从该software queue对应的list中删除该请求，并重新初始化该list gaocm</span>
+        rq-&gt;mq_ctx = ctx;
+        __blk_mq_insert_req_list(hctx, ctx, rq, <span class="hljs-keyword">false</span>); <span class="hljs-comment">//将该请求插入到software queue的末尾  gaocm</span>
+    }
+    blk_mq_hctx_mark_pending(hctx, ctx);    <span class="hljs-comment">//标记该software queue，说明其有请求将在hardware queue中被处理  gaocm</span>
+    spin_unlock(&amp;ctx-&gt;lock);
+
+    blk_mq_run_hw_queue(hctx, from_schedule);   <span class="hljs-comment">//运行hardware queue，将所有与该hardware queue映射的software queue中的请求进行处理 gaocm</span>
+    blk_mq_put_ctx(current_ctx);
+}</code></pre>
+
+<p>在上述函数中，hardware queue通过<strong>blk_mq_run_hw_queue</strong>进一步对请求进行处理，该函数描述如下：</p>
+
+</div><div id="wmd-preview-section-17809" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">void</span> blk_mq_run_hw_queue(<span class="hljs-keyword">struct</span> blk_mq_hw_ctx *hctx, <span class="hljs-keyword">bool</span> <span class="hljs-keyword">async</span>)
+{
+    <span class="hljs-keyword">if</span> (unlikely(test_bit(BLK_MQ_S_STOPPED, &amp;hctx-&gt;state) ||
+        !blk_mq_hw_queue_mapped(hctx)))
+        <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">async</span>) {   <span class="hljs-comment">// false and run  gaocm</span>
+    <span class="hljs-comment">//若async为flash则说明该处理是同步的，需要马上处理，若是异步则将该操作交由kblocked进行处理 gaocm</span>
+        <span class="hljs-keyword">int</span> cpu = get_cpu();
+        <span class="hljs-keyword">if</span> (cpumask_test_cpu(cpu, hctx-&gt;cpumask)) {  <span class="hljs-comment">// cpu is set in cpumask    gaocm</span>
+            __blk_mq_run_hw_queue(hctx);    <span class="hljs-comment">//运行hardware queue  gaocm</span>
+            put_cpu();
+            <span class="hljs-keyword">return</span>;
+        }
+
+        put_cpu();
+    }
+    kblockd_schedule_delayed_work_on(blk_mq_hctx_next_cpu(hctx),
+            &amp;hctx-&gt;run_work, <span class="hljs-number">0</span>);
+}</code></pre>
+
+<p>在上述函数中，主要是进行相关处理的判断，为同步处理的情况下则进行<strong>__blk_mq_run_hw_queue</strong>函数，描述如下：</p></div><div id="wmd-preview-section-19079" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> __blk_mq_run_hw_queue(<span class="hljs-keyword">struct</span> blk_mq_hw_ctx *hctx)
+{
+    <span class="hljs-keyword">struct</span> request_queue *q = hctx-&gt;queue;
+    <span class="hljs-keyword">struct</span> request *rq;
+    LIST_HEAD(rq_list);     <span class="hljs-comment">//初始化请求list的双向链表    gaocm</span>
+    LIST_HEAD(driver_list);
+    <span class="hljs-keyword">struct</span> list_head *dptr;
+    <span class="hljs-keyword">int</span> queued;
+
+    WARN_ON(!cpumask_test_cpu(raw_smp_processor_id(), hctx-&gt;cpumask));
+
+    <span class="hljs-keyword">if</span> (unlikely(test_bit(BLK_MQ_S_STOPPED, &amp;hctx-&gt;state))) <span class="hljs-comment">//hardware queue状态判断    gaocm</span>
+        <span class="hljs-keyword">return</span>;
+
+    hctx-&gt;run++;
+
+    <span class="hljs-comment">/*
+     * Touch any software queue that has pending entries.
+     */</span>
+    flush_busy_ctxs(hctx, &amp;rq_list);    <span class="hljs-comment">//将所有标记了有请求将被该hardware queue处理的software queue的请求数据加入到rq_list中  gaocm</span>
+
+    <span class="hljs-comment">/*
+     * If we have previous entries on our dispatch list, grab them
+     * and stuff them at the front for more fair dispatch.
+     */</span>
+    <span class="hljs-keyword">if</span> (!list_empty_careful(&amp;hctx-&gt;dispatch)) { <span class="hljs-comment">//若当前的hardware queue不空，即还有先前的请求待处理      gaocm</span>
+        spin_lock(&amp;hctx-&gt;<span class="hljs-keyword">lock</span>);
+        <span class="hljs-keyword">if</span> (!list_empty(&amp;hctx-&gt;dispatch))
+            list_splice_init(&amp;hctx-&gt;dispatch, &amp;rq_list);    <span class="hljs-comment">//将hardware queue中先前未处理完地请求加入到rq_list前部(更公平)        gaocm</span>
+        spin_unlock(&amp;hctx-&gt;<span class="hljs-keyword">lock</span>);
+    }
+
+    <span class="hljs-comment">/*
+     * Start off with dptr being NULL, so we start the first request
+     * immediately, even if we have more pending.
+     */</span>
+    dptr = NULL;
+
+    <span class="hljs-comment">/*
+     * Now process all the entries, sending them to the driver.
+     */</span>
+    queued = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (!list_empty(&amp;rq_list)) {
+        <span class="hljs-keyword">struct</span> blk_mq_queue_data bd;
+        <span class="hljs-keyword">int</span> ret;
+
+        rq = list_first_entry(&amp;rq_list, <span class="hljs-keyword">struct</span> request, queuelist); <span class="hljs-comment">//获得请求  gaocm</span>
+        list_del_init(&amp;rq-&gt;queuelist);  <span class="hljs-comment">//删除该请求 gaocm</span>
+
+        bd.rq = rq;
+        bd.list = dptr; <span class="hljs-comment">//初始化一个链表   gaocm</span>
+        bd.last = list_empty(&amp;rq_list);
+
+        <span class="hljs-comment">//初始化mq data，并判断是否还有请求待处理   gaocm</span>
+
+        ret = q-&gt;mq_ops-&gt;queue_rq(hctx, &amp;bd);   <span class="hljs-comment">//将当前请求请求数据加入到scsi queue中并返回相关结果    gaocm</span>
+        <span class="hljs-keyword">switch</span> (ret) {
+        <span class="hljs-keyword">case</span> BLK_MQ_RQ_QUEUE_OK:
+            queued++;
+            <span class="hljs-keyword">continue</span>;
+        <span class="hljs-keyword">case</span> BLK_MQ_RQ_QUEUE_BUSY:
+            list_add(&amp;rq-&gt;queuelist, &amp;rq_list);     <span class="hljs-comment">//当前无法加入到hardware queue中则重新放回rq_list    gaocm</span>
+            __blk_mq_requeue_request(rq);   <span class="hljs-comment">//重新设定该请求的某些参数等     gaocm</span>
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            pr_err(<span class="hljs-string">"blk-mq: bad return on queue: %d\n"</span>, ret);
+        <span class="hljs-keyword">case</span> BLK_MQ_RQ_QUEUE_ERROR:
+            rq-&gt;errors = -EIO;
+            blk_mq_end_request(rq, rq-&gt;errors);
+            <span class="hljs-keyword">break</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (ret == BLK_MQ_RQ_QUEUE_BUSY)    <span class="hljs-comment">//说明当前hardware queue正忙，则不再加入请求  gaocm</span>
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-comment">/*
+         * We've done the first request. If we have more than 1
+         * left in the list, set dptr to defer issue.
+         */</span>
+        <span class="hljs-keyword">if</span> (!dptr &amp;&amp; rq_list.next != rq_list.prev)
+            dptr = &amp;driver_list;
+    }
+
+    <span class="hljs-keyword">if</span> (!queued)    <span class="hljs-comment">//没有请求加入hardware queue  gaocm</span>
+        hctx-&gt;dispatched[<span class="hljs-number">0</span>]++;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (queued &lt; (<span class="hljs-number">1</span> &lt;&lt; (BLK_MQ_MAX_DISPATCH_ORDER - <span class="hljs-number">1</span>)))
+        hctx-&gt;dispatched[ilog2(queued) + <span class="hljs-number">1</span>]++;
+
+    <span class="hljs-comment">/*
+     * Any items that need requeuing? Stuff them into hctx-&gt;dispatch,
+     * that is where we will continue on next queue run.
+     */</span>
+    <span class="hljs-keyword">if</span> (!list_empty(&amp;rq_list)) {
+        spin_lock(&amp;hctx-&gt;<span class="hljs-keyword">lock</span>);
+        list_splice(&amp;rq_list, &amp;hctx-&gt;dispatch); <span class="hljs-comment">//若当前还有请求在rq_list中，则将这些请求重新放回dispatch queue中，等待下次处理并且避免丢失   gaocm</span>
+        spin_unlock(&amp;hctx-&gt;<span class="hljs-keyword">lock</span>);
+        <span class="hljs-comment">/*
+         * the queue is expected stopped with BLK_MQ_RQ_QUEUE_BUSY, but
+         * it's possible the queue is stopped and restarted again
+         * before this. Queue restart will dispatch requests. And since
+         * requests in rq_list aren't added into hctx-&gt;dispatch yet,
+         * the requests in rq_list might get lost.
+         *
+         * blk_mq_run_hw_queue() already checks the STOPPED bit
+         **/</span>
+        blk_mq_run_hw_queue(hctx, <span class="hljs-keyword">true</span>);    <span class="hljs-comment">//说明当前hardware queue正忙，则调用该函数进行异步处理，交由kblocked处理    gaocm   </span>
+    }
+}</code></pre>
+
+<p>在上述函数中，q-&gt;mq_ops-&gt;queue_rq负责将请求下发至scsi层中，并返回对应的结果，而该blk_mq_ops中的queue_rq函数在drivers/scsi中被注册为scsi_queue_rq:</p></div><div id="wmd-preview-section-19800" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint"><code class=" hljs avrasm">static struct blk_mq_ops scsi_mq_ops = {
+    <span class="hljs-preprocessor">.map</span>_queue  = blk_mq_map_queue,
+    <span class="hljs-preprocessor">.queue</span>_rq   = scsi_queue_rq,
+    <span class="hljs-preprocessor">.complete</span>   = scsi_softirq_done,
+    <span class="hljs-preprocessor">.timeout</span>    = scsi_timeout,
+    <span class="hljs-preprocessor">.init</span>_request   = scsi_init_request,
+    <span class="hljs-preprocessor">.exit</span>_request   = scsi_exit_request,
+}<span class="hljs-comment">;</span></code></pre>
+
+<p>在scsi_queue_rq函数中，请求将会被转化为scsi command，然后进一步发送到底层driver中。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>
+				</div>
+			</div>
+		</div>
+		<div class="extension-preview-buttons closed animate" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: pan-y; transform: translate(109px, -6px);">
+			<div class="btn-group drag-me dropup" title="" data-original-title="这里可以拖拽">
+				<i class="icon-ellipsis-vert"></i>
+			</div>
+		<div class="btn-group dropup"></div><div class="btn-group dropup"><button class="btn btn-success dropdown-toggle" title="标题列表" data-toggle="dropdown">
+    <i class="icon-list"></i>
+</button>
+<div class="dropdown-menu pull-right">
+    <h4>标题列表</h4>
+    <hr>
+    <div class="table-of-contents"><div class="toc">
+<ul>
+<li><a href="http://write.blog.csdn.net/mdeditor#本文主要分析基于multiqueue的linux-block-layer层部分源码内容">本文主要分析基于MultiQueue的Linux Block Layer层部分源码内容</a></li>
+</ul>
+</div>
+</div>
+    <hr>
+</div>
+</div><div class="btn-group dropup"><button class="btn btn-success dropdown-toggle stat-button" title="统计信息" data-toggle="dropdown">
+	<i class="icon-chart-bar"></i>
+	<span class="value">11177</span>
+</button>
+<div class="dropdown-menu pull-right stat-button-dropdown">
+	<h4>统计信息</h4>
+    <hr>
+	<div class="stat">
+		<div>
+			字数: <span class="value1">11177</span>
+		</div>
+		<!--<div>-->
+			<!--词（单词）: <span class="value2"></span>-->
+		<!--</div>-->
+		<div>
+			段落: <span class="value3">363</span>
+		</div>
+	</div>
+</div>
+</div></div>
+	<div class="find-replace" style="display: none;"><button type="button" class="close button-find-replace-dismiss">×</button>
+<div class="form-inline">
+    <div class="form-group">
+        <label for="input-find-replace-search-for">搜索</label>
+        <input class="form-control" id="input-find-replace-search-for" placeholder="关键词">
+    </div>
+    <div class="form-group">
+        <label for="input-find-replace-replace-with">替换为</label>
+        <input class="form-control" id="input-find-replace-replace-with" placeholder="替换文本">
+    </div>
+</div>
+<div class="pull-right">
+    <div class="help-block text-right">
+        <span class="found-counter">0</span> 处
+    </div>
+    <div>
+        <button type="button" class="btn btn-sm btn-primary search-button">查找</button>
+        <button type="button" class="btn btn-sm btn-warning replace-button">替换</button>
+        <button type="button" class="btn btn-sm btn-danger replace-all-button">全部替换</button>
+    </div>
+</div>
+<div class="pull-left">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" class="checkbox-case-sensitive"> 区分大小写
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" class="checkbox-regexp"> 正则表达式
+        </label>
+    </div>
+</div>
+</div></div>
+	<div id="wmd-button-bar" class="hide"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-spacer wmd-spacer1 btn btn-success" id="wmd-spacer1" style="left: 0px;"></li><li class="wmd-spacer wmd-spacer2 btn btn-success" id="wmd-spacer2" style="left: 0px;"></li><li class="wmd-spacer wmd-spacer3 btn btn-success" id="wmd-spacer3" style="left: 0px;"></li></ul></div>
+
+
+	<div class="document-panel">
+
+		<div class="panel-content">
+			<div class="list-group document-list"><ul class="nav"><li><a href="http://write.blog.csdn.net/mdeditor#" class="list-group-item file active" data-file-index="file.o8Wtsd9dAq7gp9UsnuhBdf5e">   <i class="icon-provider-csdnblog"></i>欢迎使用CSDN-markdown编辑器</a></li></ul></div>
+			<div class="list-group document-list-filtered hide"><ul class="nav"><li><a href="http://write.blog.csdn.net/mdeditor#" class="list-group-item file active" data-file-index="file.o8Wtsd9dAq7gp9UsnuhBdf5e">   <i class="icon-provider-csdnblog"></i>欢迎使用CSDN-markdown编辑器</a></li></ul></div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-document-manager">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">文档管理</h4>
+			</div>
+			<div class="modal-body">
+				<div></div>
+				<ul class="nav nav-pills document-list">
+					<li class="pull-right dropdown"><a data-toggle="dropdown"><i class="icon-check"></i> 选择操作 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a class="action-select-all"><i class="icon-check"></i> 选择全部</a></li>
+							<li><a class="action-unselect-all"><i class="icon-check-empty"></i> 取消选择</a></li>
+							<li class="divider"></li>
+							<li class="disabled"><a class="action-move-items"><i class="icon-forward"></i> 移到指定文件夹</a></li>
+							<li class="disabled"><a class="action-delete-items"><i class="icon-trash"></i> 删除</a></li>
+						</ul>
+					</li>
+					<li class="pull-right"><a class="action-create-folder"> <i class="icon-folder"></i> 新建文件夹</a></li>
+					<li class="disabled"><a><i class="icon-file"></i> <span class="document-count">1</span></a></li>
+					<li class="disabled"><a><i class="icon-folder"></i> <span class="folder-count">1</span></a></li>
+				</ul>
+				<div class="list-group document-list"><a href="http://write.blog.csdn.net/mdeditor#" class="list-group-item folder root-folder clearfix" data-toggle="collapse" data-target=".modal-document-manager .file-list.root-folder"><label class="checkbox" title="Select"><input type="checkbox"></label><div class="pull-right file-count">1</div><div class="name"><i class="icon-folder"></i> ROOT folder</div></a><div class="file-list collapse root-folder clearfix"><ul class="nav"><li class="list-group-item file clearfix" data-file-index="file.o8Wtsd9dAq7gp9UsnuhBdf5e"><label class="checkbox" title="Select"><input type="checkbox"></label><button class="btn btn-default button-delete" title="Delete"><i class="icon-trash"></i></button><button class="btn btn-default button-rename" title="Rename"><i class="icon-pencil"></i></button><div class="name"><i class="icon-provider-csdnblog"></i>欢迎使用CSDN-markdown编辑器</div><input type="text" class="input-rename form-control hide"></li></ul></div></div>
+				<p class="confirm-delete hide">下列文档将从你本地存储中删除：</p>
+
+				<p class="choose-folder hide">请选择一个目标文件夹：</p>
+
+				<div class="list-group selected-document-list hide"></div>
+				<div class="list-group select-folder-list hide"></div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default confirm-delete choose-folder action-cancel hide">取消</a>
+				<a class="btn btn-danger confirm-delete action-delete-items-confirm hide">确定</a>
+				<a class="btn btn-danger document-list" data-dismiss="modal">关闭</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-insert-link">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">添加链接</h4>
+			</div>
+			<div class="modal-body">
+				<p>链接书写格式为：链接地址 + 空格 + "链接提示"。</p>
+
+				<div class="input-group">
+					<span class="input-group-addon">
+                        <i class="icon-link"></i>
+                    </span>
+					<input id="input-insert-link" type="text" class="col-sm-5 form-control" placeholder="http://example.com/ &quot;optional title&quot;">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-insert-link" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-insert-image">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">插入图片</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="http://write.blog.csdn.net/mdeditor#img_online" role="tab" data-toggle="tab">在线图片</a>
+					</li>
+					<li role="presentation"><a href="http://write.blog.csdn.net/mdeditor#img_upload" role="tab" data-toggle="tab">上传图片</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="img_online">
+						<p>图片书写格式为：图片地址 + 空格 + "图片提示"。</p>
+
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-picture"></i></span>
+							<input id="input-insert-image" type="text" class="col-sm-5 form-control" placeholder="http://example.com/image.jpg &quot;optional title&quot;">
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="img_upload">
+						<!--<iframe src="http://ask.csdn.net/upload.html"></iframe>-->
+						<iframe name="up_img" src="./CSDN-markdown编辑器_files/UploadImgMarkdown.html"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a> <a class="btn btn-danger action-insert-image" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-start-abstract modal-bg" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">摘要 标签</h4>
+			</div>
+			<div class="modal-body">
+				<div id="alert-nll" class="alert alert-danger fade hide"><i class="icon-warning"></i> 摘要内容不能为空！</div>
+				<div class="form-group">
+					<textarea class="form-control" rows="10" maxlength="210" id="input-blog-description" required="required"> </textarea>
+				</div>
+				<div class="form-group">
+					<div id="blog_tagRecomm"><span class="drt_tit">推荐标签：</span><a href="http://write.blog.csdn.net/mdeditor#" class="se_key tag">uml&nbsp;&nbsp;＋</a><a href="http://write.blog.csdn.net/mdeditor#" class="se_key tag">编辑器&nbsp;&nbsp;＋</a><a href="http://write.blog.csdn.net/mdeditor#" class="se_key tag">linux&nbsp;&nbsp;＋</a><a href="http://write.blog.csdn.net/mdeditor#" class="se_key tag">markdown&nbsp;&nbsp;＋</a></div>
+					<div class="div_tags clearfix">
+						<div id="tags-con-blog" class="tags_con">
+							<span class="tags_label"></span>
+							<input type="text" maxlength="10">
+						</div>
+						<input type="hidden" id="tags-val-blog" class="form-control" value="">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger" id="csdn-tags-blog-button">下一步</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-doc-setting modal-bg">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">文章设置</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">文章类型</label>
+
+						<div class="col-sm-5">
+							<select class="form-control" id="input-blog-type">
+								<option value="0" selected="selected">请选择</option>
+								<option value="original">原创</option>
+								<option value="repost">转载</option>
+								<option value="translated">翻译</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">个人分类</label>
+
+						<div class="col-sm-10">
+							<div id="tags-con-categories" class="tags_con">
+								<span class="tags_label"></span>
+								<input type="text" maxlength="10">
+							</div>
+							<input type="hidden" class="form-control" id="tags-val-categories" value="">
+
+							<div id="blog-categories-loadding"></div>
+							<div id="blog-categories-box"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">文章分类</label>
+
+						<div class="col-sm-5">
+							<select class="form-control" name="radChl" id="input-blog-channel">
+								<option value="0" selected="selected">请选择</option>
+								<option value="1">移动开发</option>
+								<option value="14">Web前端</option>
+								<option value="15">架构设计</option>
+								<option value="16">编程语言</option>
+								<option value="17">互联网</option>
+								<option value="6">数据库</option>
+								<option value="12">系统运维</option>
+								<option value="2">云计算</option>
+								<option value="3">研发管理</option>
+								<option value="7">综合</option>
+							</select>
+						</div>
+						<div class="col-sm-3"><p class="form-control-static">分类到首页</p></div>
+					</div>
+
+                    <div class="form-group">
+						<label class="col-sm-2 control-label" title="添加关联的文章url">更多文章</label>
+						<div class="col-sm-10">
+							<div class="tags_con">
+                                  <input id="inputArticleMore" type="text" style="width:446px;" maxlength="100">                                  
+							</div>	
+                            	
+                             <input type="button" id="submitMoreArticle" value="添加">   					
+						</div>
+                        <div class="col-smtags_con10">
+                            <div id="articlePanle" style="margin-left:113px"></div>       
+                        </div>
+					</div>
+
+                  <!-- <div class="form-group" id="panelCopyright" style="display:none" >
+						<label class="col-sm-2 control-label">版权声明</label>
+						<div class="col-sm-10">
+							<div class="tags_con">							
+								 <input type="text" maxlength="100" id="inputCopyright"  value="本文为博主原创文章，未经博主允许不得转载。"  style="width:446px" >
+							</div>							
+						</div>
+					</div>-->
+
+					<div class="form-group" style="display:none">
+						<div class="col-sm-5 col-sm-offset-2">
+							<label class="checkbox-inline">
+								<input type="checkbox" id="input-blog-level">发布到CSDN博客首页
+							</label>
+						</div>
+						<div class="col-sm-5"><p class="form-control-static">需积分&gt;100且文章类型非转载</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger" id="csdn-channel-blog-button" data-dismiss="modal" style="display: none;">确定</a>
+				<a class="btn btn-danger" id="csdn-post-blog-button" data-dismiss="modal">发布</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-export-doc">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">导出文档</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="nav">
+					<li><a class="action-download-md"><i class="icon-file-markdown"></i>
+
+						<p>Markdown</p></a></li>
+					<li><a class="action-download-html"><i class="icon-file-html"></i>
+
+						<p>仅内容HTML</p></a></li>
+					<li><a class="action-download-template"><i class="icon-file-html-t"></i>
+
+						<p>带模板HTML</p></a></li>
+					<!--<li><a class="action-download-pdf"><i class="icon-file-pdf"></i> <p>PDF文档</p></a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-helps hide">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" onclick="$(&#39;.modal-helps&#39;).addClass(&#39;hide&#39;)">×</button>
+				<h4 class="modal-title">Markdown语法帮助</h4>
+			</div>
+			<div class="modal-body">
+				<ol class="help-menu">
+					<li class="active"><a>标题</a>
+
+						<div>
+							<h4>在文字写书写不同数量的#可以完成不同的标题，如下：</h4>
+
+							<p># 一级标题<br>
+								## 二级标题<br>
+								### 三级标题<br>
+								#### 四级标题<br>
+								##### 五级标题<br>
+								###### 六级标题</p>
+							<h4>等号及减号也可以进行标题的书写，不过只能书写二级标题，并且需要写在文字的下面，减号及等号的数量不会影响标题的基数，如下：</h4>
+
+							<p>二级标题<br>
+								=========</p>
+
+							<p>二级标题<br>
+								---------</p>
+						</div>
+					</li>
+					<li><a>列表</a>
+
+						<div>
+							<h4>无序列表的使用，在符号“-”后加空格使用。如下：</h4>
+
+							<p> - 无序列表1<br>
+								- 无序列表2<br>
+								- 无序列表3</p>
+							<h4>如果要控制列表的层级，则需要在符号“-”前使用空格。如下：</h4>
+
+							<p> - 无序列表1<br>
+								- 无序列表2<br>
+								&nbsp;&nbsp;- 无序列表2.1<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 列表内容<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 列表内容</p>
+
+							<p>&nbsp;</p>
+							<h4>有序列表的使用，在数字及符号“.”后加空格几个，如下：</h4>
+
+							<p> 1. 有序列表1<br>
+								2. 有序列表2<br>
+								3. 有序列表3<br>
+							</p>
+							<h4>有序列表如果要区分层级，也可以在数字前加空格。</h4>
+						</div>
+					</li>
+					<li><a>引用</a>
+
+						<div>
+							<h4>引用的格式是使用符号“&gt;”后面书写文字，及可以使用引用。如下：</h4>
+
+							<p> &gt;这个是引用<br> &gt; 是不是和电子邮件中的<br>
+								&gt; 引用格式很像</p>
+						</div>
+					</li>
+					<li><a>粗体与斜体</a>
+
+						<div>
+							<h4>
+								粗体的使用是在需要加粗的文字前后各加两个“*”，而斜体的使用则是在需要斜体的文字前后各加一个“*”，如果要使用粗体和斜体，那么就是在需要操作的文字前后各加三个“*”。如下：</h4>
+
+							<p> **这个是粗体**<br>
+								*这个是斜体*<br>
+								***这个是粗体加斜体***</p>
+						</div>
+					</li>
+					<li><a>链接与图片</a>
+
+						<div>
+							<h4>在文中直接加链接，中括号中是需要添加链接的文字，圆括号中是需要添加的链接，如下：</h4>
+
+							<p> [link text](http://example.com/ "optional title")</p>
+							<h4>在引用中加链接，第一个中括号添加需要添加的文字，第二个中括号中是引用链接的id，之后在引用中，使用id加链接：如下：</h4>
+
+							<p> [link text][id]<br>
+								[id]: http://example.com/ "optional title here"</p>
+							<h4>在文中直接引用链接，直接使用尖括号，把链接加入到尖括号中就可以实现，如下：</h4>
+
+							<p>&lt;http://example.com/&gt; or &lt;address@example.com&gt;<br>
+							</p>
+							<h4>插入互联网上图片，格式如下：</h4>
+
+							<p>![这里写图片描述](http://img3.douban.com/mpic/s1108264.jpg)<br>
+								![这里写图片描述][jane-eyre-douban]<br>
+								[jane-eyre-douban]: http://img3.douban.com/mpic/s1108264.jpg</p>
+						</div>
+					</li>
+					<li><a>代码块</a>
+
+						<div>
+							<h4>用TAB键起始的段落，会被认为是代码块，如下：</h4>
+
+							<p> &nbsp;&nbsp;&nbsp;&nbsp;&lt;php&gt;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo “hello world";<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&lt;/php&gt;</p>
+							<h4>如果在一个行内需要引用代码，只要用反引号`引起来就好，如下：</h4>
+
+							<p> Use the <code>`printf()` </code>function.</p>
+						</div>
+					</li>
+					<li><a>分割线与删除线</a>
+
+						<div>
+							<h4>可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，同时需要在分隔线的上面空一行。如下：</h4>
+
+							<p> ---<br>
+								****<br>
+								___</p>
+							<h4>删除线的使用，在需要删除的文字前后各使用两个符合“~”，如下</h4>
+
+							<p> ~~Mistaken text.~~</p>
+						</div>
+					</li>
+					<li><a>代码块与语法高亮</a>
+
+						<div>
+							<h4>在需要高亮的代码块的前一行及后一行使用三个反引号“`”，同时第一行反引号后面表面代码块所使用的语言，如下：</h4>
+
+							<p>```ruby<br>
+								require 'redcarpet'<br>
+								markdown = Redcarpet.new("Hello World!")<br>
+								puts markdown.to_html<br>
+								```</p>
+						</div>
+					</li>
+					<li><a>表格</a>
+
+						<div>
+							<h4>可以使用冒号来定义表格的对齐方式，如下：</h4>
+
+							<p> | Tables | Are | Cool |<br>
+								| ------------- |:-------------:| -----:|<br>
+								| col 3 is | right-aligned | $1600 |<br>
+								| col 2 is | centered | $12 |<br>
+								| zebra stripes | are neat | $1 |<br>
+							</p>
+						</div>
+					</li>
+					<li><a>LaTex数学公式</a>
+
+						<div>
+							<h4>使用MathJax渲染*LaTex* 数学公式，详见[<a href="http://math.stackexchange.com/" target="_blank">math.stackexchange.com</a>]
+							</h4>
+							<h4>行内公式，数学公式为：</h4>
+
+							<p>$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$<br>
+							</p>
+							<h4>块级公式：</h4>
+
+							<p>$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+
+							<p>更多LaTex语法请参考 [<a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank">这儿</a>]。</p>
+
+						</div>
+					</li>
+					<li><a>UML 图</a>
+
+						<div>
+							<h4>可以渲染序列图：</h4>
+
+							<p>```sequence<br>
+								张三-&gt;李四: 嘿，小四儿, 写博客了没?<br>
+								Note right of 李四: 李四愣了一下，说：<br>
+								李四--&gt;张三: 忙得吐血，哪有时间写。<br>
+								```</p>
+							<h4>或者流程图：</h4>
+
+							<p>```flow<br>
+								st=&gt;start: 开始<br>
+								e=&gt;end: 结束<br>
+								op=&gt;operation: 我的操作<br>
+								cond=&gt;condition: 确认？</p>
+
+							<p>st-&gt;op-&gt;cond<br>
+								cond(yes)-&gt;e<br>
+								cond(no)-&gt;op<br>
+								```</p>
+
+							<p>- 关于 **序列图** 语法，参考 [<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank">这儿</a>]<br>
+								- 关于 **流程图** 语法，参考 [<a href="http://adrai.github.io/flowchart.js/" target="_blank">这儿</a>]<br>
+							</p>
+						</div>
+					</li>
+				</ol>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-alert">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer text-center">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-import-image">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">Google+ image import</h2>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-7">
+							<img>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="input-import-image-title">Title (optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-import-image-title" placeholder="Image title" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="input-import-image-size">Size limit (optional)</label>
+
+						<div class="col-sm-7 form-inline">
+							<input type="text" id="input-import-image-size" placeholder="0" class="col-sm-3 form-control"> px
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-import-image" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-remove-file-confirm">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">Delete</h2>
+			</div>
+			<div class="modal-body">
+				<p>
+					Are you sure you want to delete "<span class="file-title">欢迎使用CSDN-markdown编辑器</span>"?
+				</p>
+				<blockquote>
+					<p><b>Note:</b> It won't delete the file on synchronized locations.</p>
+				</blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-remove-file" data-dismiss="modal">Delete</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-import-url">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">从线上导入</h4>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-danger">
+					<p><i class="icon-warning"></i> 注意：当前操作只要成功导入在线.md地址就会冲掉当前的文章，请确定是否保存或者发表后再进行导入操作。</p>
+
+					<p>PS：IE11以下版本不支持导入功能。</p>
+				</div>
+				<p>请输入在线的markdown文件地址：</p>
+
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-import-url">URL</label>
+
+						<div class="col-sm-9">
+							<input type="text" id="input-import-url" placeholder="http://code.csdn.net/test.md" class="form-control">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a data-dismiss="modal" class="btn btn-danger action-import-url">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-import-harddrive-markdown">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">从本机导入</h4>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-danger">
+					<p><i class="icon-warning"></i> 注意：当前操作只要成功选择或者拖入.md文件就会冲掉当前的文章，请确定是否保存或者发表后再进行导入操作。</p>
+
+					<p>PS：IE11以下版本不支持导入功能。</p>
+				</div>
+				<p>请选择你要导入的.md文档</p>
+
+				<p>
+					<input type="file" id="input-file-import-harddrive-markdown" multiple="" class="form-control">
+				</p>
+
+				<p>或者将.md文档拖到这里</p>
+
+				<p id="dropzone-import-harddrive-markdown" class="drop-zone">拖拽文件到这里</p>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-danger" data-dismiss="modal">关闭</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-import-harddrive-html">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">Convert HTML to Markdown</h2>
+			</div>
+			<div class="modal-body">
+				<p>Please select your HTML files here:</p>
+
+				<p>
+					<input type="file" id="input-file-import-harddrive-html" multiple="" class="form-control">
+				</p>
+
+				<p>Or drag and drop your HTML files here:</p>
+
+				<p id="dropzone-import-harddrive-html" class="drop-zone">Drop files here</p>
+
+				<p>Or insert your HTML code here:</p>
+				<textarea id="input-convert-html" class="form-control"></textarea>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-convert-html" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-publish">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">
+					Publish on <span class="publish-provider-name"></span>
+				</h2>
+			</div>
+			<div class="modal-body">
+				<div class="form-horizontal">
+					<div class="form-group modal-publish-ssh">
+						<label class="col-sm-4 control-label" for="input-publish-ssh-host">Host</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-ssh-host" placeholder="hostname.or.ip" class="form-control"> <span class="help-block"> Host must be accessible publicly, unless you're hosting your own StackEdit instance.
+							</span>
+						</div>
+					</div>
+					<div class="form-group modal-publish-ssh">
+						<label class="col-sm-4 control-label" for="input-publish-ssh-port">Port
+							(optional)</label>
+
+						<div class="col-sm-2">
+							<input type="text" id="input-publish-ssh-port" placeholder="22" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-ssh">
+						<label class="col-sm-4 control-label" for="input-publish-ssh-username">Username</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-ssh-username" placeholder="username" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-ssh">
+						<label class="col-sm-4 control-label" for="input-publish-ssh-password">Password</label>
+
+						<div class="col-sm-7">
+							<input type="password" id="input-publish-ssh-password" placeholder="password" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-github">
+						<label class="col-sm-4 control-label" for="input-publish-github-repo">Repository</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-github-repo" placeholder="Repository name or URL" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-github">
+						<label class="col-sm-4 control-label" for="input-publish-github-branch">Branch</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-github-branch" placeholder="branch-name" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-ssh modal-publish-github">
+						<label class="col-sm-4 control-label" for="input-publish-file-path">File path</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-file-path" placeholder="path/to/file.md" class="form-control">
+							<span class="help-block"> File path is composed of both
+								folder and filename. </span>
+						</div>
+					</div>
+					<div class="form-group modal-publish-gist">
+						<label class="col-sm-4 control-label" for="input-publish-filename">Filename</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-filename" placeholder="filename" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-gist">
+						<label class="col-sm-4 control-label" for="input-publish-gist-id">Existing
+							ID (optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-gist-id" placeholder="GistID" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-gist">
+						<label class="col-sm-4 control-label" for="input-publish-gist-public">Public</label>
+
+						<div class="col-sm-7">
+							<div class="checkbox">
+								<input type="checkbox" id="input-publish-gist-public" checked="checked">
+							</div>
+						</div>
+					</div>
+					<div class="form-group modal-publish-blogger modal-publish-bloggerpage">
+						<label class="col-sm-4 control-label" for="input-publish-blogger-url">Blog URL</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-blogger-url" placeholder="http://exemple.blogger.com/" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-tumblr">
+						<label class="col-sm-4 control-label" for="input-publish-tumblr-hostname">Blog hostname</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-tumblr-hostname" placeholder="exemple.tumblr.com" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-wordpress">
+						<label class="col-sm-4 control-label" for="input-publish-tumblr-hostname">WordPress site</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-wordpress-site" placeholder="exemple.wordpress.com" class="form-control">
+							<span class="help-block"> <a target="_blank" href="http://jetpack.me/">Jetpack plugin</a> is required for
+								self-hosted sites.
+							</span>
+						</div>
+					</div>
+					<div class="form-group modal-publish-blogger modal-publish-tumblr modal-publish-wordpress">
+						<label class="col-sm-4 control-label" for="input-publish-postid">Update
+							existing post ID (optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-postid" placeholder="PostID" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-bloggerpage">
+						<label class="col-sm-4 control-label" for="input-publish-pageid">Update
+							existing page ID (optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-pageid" placeholder="PageID" class="form-control">
+						</div>
+					</div>
+					<div class="form-group modal-publish-dropbox">
+						<label class="col-sm-4 control-label" for="input-publish-dropbox-path">File path</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-dropbox-path" placeholder="/path/to/My Document.html" class="form-control">
+							<span class="help-block"> File path is composed of both
+								folder and filename. </span>
+						</div>
+					</div>
+					<div class="form-group modal-publish-gdrive">
+						<label class="col-sm-4 control-label" for="input-publish-gdrive-fileid">File ID (optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-gdrive-fileid" placeholder="FileID" class="form-control"> <span class="help-block">If no file ID is supplied, a new file
+								will be created in your Google Drive root folder. You can move
+								the file afterwards within Google Drive.</span>
+						</div>
+					</div>
+					<div class="form-group modal-publish-gdrive">
+						<label class="col-sm-4 control-label" for="input-publish-gdrive-filename">Force filename
+							(optional)</label>
+
+						<div class="col-sm-7">
+							<input type="text" id="input-publish-gdrive-filename" placeholder="Filename" class="form-control"> <span class="help-block">If no file name is supplied, the
+								document title will be used.</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label">Format</label>
+
+						<div class="col-sm-7">
+							<div class="radio">
+								<label> <input type="radio" name="radio-publish-format" value="markdown"> Markdown
+								</label>
+							</div>
+							<div class="radio">
+								<label> <input type="radio" name="radio-publish-format" value="html"> HTML
+								</label>
+							</div>
+							<div class="radio">
+								<label> <input type="radio" name="radio-publish-format" value="template"> Template
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="collapse publish-custom-template-collapse">
+						<div class="form-group">
+							<div class="col-sm-4"></div>
+							<div class="col-sm-7">
+								<div class="checkbox">
+									<label> <input type="checkbox" id="checkbox-publish-custom-template"> Custom template
+									</label> <a class="tooltip-template">(?)</a>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-4"></div>
+							<div class="col-sm-7">
+								<textarea class="form-control" id="textarea-publish-custom-template"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<blockquote class="front-matter-info modal-publish-blogger modal-publish-tumblr modal-publish-wordpress">
+					<p><b>Tip:</b> You can use a
+						<a href="http://jekyllrb.com/docs/frontmatter/" target="_blank">YAML front matter</a> to specify the title and the tags/labels of your
+						publication.</p>
+
+					<p><b>Interpreted variables:</b> <code>title</code>, <code>tags</code>, <code>published</code>,
+						<code>date</code>.</p>
+				</blockquote>
+				<blockquote class="front-matter-info modal-publish-bloggerpage">
+					<p><b>Tip:</b> You can use a
+						<a href="http://jekyllrb.com/docs/frontmatter/" target="_blank">YAML front matter</a> to specify the title of your page.</p>
+
+					<p><b>Interpreted variables:</b> <code>title</code>.</p>
+				</blockquote>
+				<blockquote class="url-info modal-publish-bloggerpage">
+					<p><b>About URL:</b> For newly created page , Blogger API will append a generated number to the url
+						like <code>about-me-1234.html</code>, if you deeply care about your URL naming, you should first
+						create the page on Blogger and then update them with StackEdit specifying the pageId when
+						publishing.
+					</p>
+
+					<p><b>About page visibility:</b> Blogger API does not respect published status for pages.When
+						publishing the page to Blogger, the page will be <strong>live</strong> but not added to the page
+						listing. You should arrange the page listing from Blogger dashboard.
+					</p>
+				</blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a data-dismiss="modal" class="btn btn-danger action-process-publish">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-manage-publish">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title">Publication</h2>
+			</div>
+			<div class="modal-body">
+				<p>
+					"<span class="file-title">欢迎使用CSDN-markdown编辑器</span>" is published on the following
+					location(s):
+				</p>
+
+				<div class="publish-list"><div class="entry">
+    <div class="input-group">
+	<span class="input-group-addon" title="CsdnBlog">
+		<i class="icon-provider-csdnblog"></i>
+	</span> <input class="form-control" type="text" value="id:, htmlContent:, markdowndirectory:, type:0, channel:0, categories:, description:, tags:, level:0, status:0, articleedittype:1, articlemore:, format:markdown" disabled="">
+    </div>
+    <div class="text-right">
+        <a class="btn btn-link btn-sm open-location" target="_blank" href="https://blog.csdn.net/">
+            <i class="icon-link-ext-alt"></i> Open in CsdnBlog
+        </a>
+        <a class="btn btn-link btn-sm remove-button" data-publish-index="publish.uaXtCqWg5qvBYfO7nkv2fu2g"><i class="icon-trash"></i> Remove location</a>
+    </div>
+</div>
+</div>
+				<blockquote>
+					<p><b>Note:</b> Removing a publish location will not delete the actual publication.</p>
+				</blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-danger" data-dismiss="modal">Close</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-non-unique">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">不好意思...</h4>
+			</div>
+			<div class="modal-body">
+				<p>Markdown编辑器已经停止，因为另一个实例中相同的浏览器中运行。</p>
+				<blockquote>
+					<p>如果你想重新打开Markdown编辑器，请点击 “重新加载”</p>
+				</blockquote>
+			</div>
+			<div class="modal-footer">
+				<a href="javascript:window.location.reload();" class="btn btn-danger">重新加载</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-redirect-confirm">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h2 class="modal-title">Redirection</h2>
+			</div>
+			<div class="modal-body">
+				<p class="redirect-msg"></p>
+				<blockquote>
+					<p>Please click <b>确定</b> to proceed.</p>
+				</blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-redirect-confirm" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-app-reset">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h2 class="modal-title">Reset application</h2>
+			</div>
+			<div class="modal-body">
+				<p>This will delete all your local documents.</p>
+				<blockquote><b>Are you sure?</b></blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-app-reset" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade modal-import-docs-settings">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h2 class="modal-title">Import documents and settings</h2>
+			</div>
+			<div class="modal-body">
+				<p>This will delete all existing local documents.</p>
+				<blockquote><b>Are you sure?</b></blockquote>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-default" data-dismiss="modal">取消</a>
+				<a class="btn btn-danger action-import-docs-settings-confirm" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</div>
+       
+    <div id="loginform" style="display: none"></div>    
+                <style type="text/css">
+                        /*第一次加载的时候的弹出选择使用哪个编辑器*/
+
+                    .mod_pop_edit_choose{position: absolute;width: 600px;height: 400px;color: #fff;font-size: 14px;background: url("http://static.blog.csdn.net/images/edit_choose_bg_makrdown.png");z-index: 999}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_title{height: 50px;line-height: 50px;font-size: 18px;}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_title span {background: url("http://static.blog.csdn.net/images/bole_help_close.png");background-size:contain;display: inline-block;width:16px;height: 16px ;float: right;margin-top: 10px;margin-right: 20px}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_content {text-align: center}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_content a {text-align: center;
+                        display: inline-block;
+                        width: 116px;
+                        height: 35px;
+                        padding: 0;
+                        line-height: 35px;
+                        font-size: 18px;
+                        color: #fff;
+                        margin-top: 250px;
+                        border: 1px solid #fff;
+                        border-radius: 10px;
+                        text-decoration: none;
+                    }
+                    .mod_pop_edit_choose .mod_pop_edit_choose_footer	{height: 50px;line-height: 50px;font-size: 18px;}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_footer input 	{height: 16px;width: 16px;vertical-align: middle;margin: 0;padding: 0;margin-left: 30px;margin-right: 5px}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_footer em 	{font-style: normal;vertical-align: middle}
+                    .mod_pop_edit_choose .mod_pop_edit_choose_footer span{display: inline-block;width: 80px;height: 28px;line-height:28px;color: #fff;text-align: center;float: right;font-size: 14px;background: #BE0000;margin-right: 20px;margin-top: 12px;cursor: pointer}
+
+                </style>
+    <!--编辑器load引导页面start-->
+    <div class="mod_pop_edit_choose" style="display: none; top: 262.5px; left: 660px;">
+        <div class="mod_pop_edit_choose_title"><span class="close"></span></div>
+        <div class="mod_pop_edit_choose_content">
+            <a id="start_md" class="start_btn" href="javascript:void(0);" style="margin-right: 50px;">马上试用</a>
+            <a id="start_conf" class="start_btn" href="http://write.blog.csdn.net/configure">重新设置</a>
+        </div>
+        <div class="mod_pop_edit_choose_footer"><input id="no_tishi" type="checkbox" name="" value="" class="checkbox" style="display: inline-block"><em>不再提示</em></div>
+    </div>
+    <!--引入弹窗组件-->
+    <script type="text/javascript">
+        $(function () {
+            var edu_component = {};
+            edu_component.comon_popup = function (option_conf) {
+                var default_conf = {
+                    $btn: null,
+                    $popup: null,
+                    top_value: 0
+                }
+                var popup_conf = $.extend(default_conf, option_conf);
+                this.$btn = popup_conf.$btn;
+                this.$popup = popup_conf.$popup;
+                this.top_value = popup_conf.top_value;
+                this.mark = null;
+            }
+            edu_component.comon_popup.prototype = {
+                init: function () {
+                    this.mark = this.createMaskFactory();
+                    this.open();
+                    this.close();
+                },
+                open: function () {
+                    var that = this;
+                    //位置
+                    var w = $(document).width();
+                    var h = $(document).height();
+                    var top = $(window).height() / 2 - this.$popup.height() / 2 + $(window).scrollTop();
+                    var top_defined = that.top_value;
+                    this.$popup.css({
+                        //top:(top_defined+'px')|| (top + 'px'),
+                        top: (top + 'px'),
+                        left: w / 2 - this.$popup.width() / 2 + 'px'
+                    });
+                    if (this.$btn) {
+                        this.$btn.click(function () {
+                            setTimeout(function () {
+                                that.$popup.show();
+                                that.$popup.css({
+                                    opacity: 1
+                                });
+                            }, 200);
+                            //加入mask
+                            //让这个单例的mask对象显示出来
+                            that.mark.showMask();
+
+                        })
+                    }
+                        //如果没有点击按钮就是onload
+                    else {
+                        this.mark.showMask();
+                    }
+
+                },
+                close: function () {
+                    var that = this;
+                    this.$popup.find(" .close").add(".close_know").click(function () {
+                        that.mark.hideMask();
+                        that.$popup.css({ opacity: 0 });
+                        setTimeout(function () {
+                            that.$popup.hide();
+                        }, 200);
+                        //把那个单例的mask隐藏。
+
+                    })
+
+                },
+                //遮罩的创建和加入遮罩是不是要分开
+                createMaskFactory: function () {
+                    var w = $(document).width();
+                    var h = $(document).height();
+                    var mask = {};
+                    mask.showMask = function () {
+                        this.contentElemnt.show()
+
+                    }
+                    mask.hideMask = function () {
+                        this.contentElemnt.hide()
+
+                    }
+                    var $marker = $('<div class="marker"></div>');
+                    $marker.css({
+                        opacity: 0.5,
+                        width: w + 'px',
+                        height: h + 'px'
+                    });
+
+                    if (!this.mark) {
+                        $('body #wrap').append($marker);
+                        mask.contentElemnt = $marker;
+                    }
+                    return mask
+
+                }
+
+            }
+
+
+            /**
+             * Created by yangwei1 on 15-4-14.
+             */
+            //$btn默认为空表示是加载就显示，这个表示点击的那个btn
+            //$pop表示弹出那个框
+            //top_value 到顶部的距离是可设置的，现在取消，是视窗的中间
+            //开始调用，这个为博客帮助的弹出
+            //打开就加载的弹窗
+
+            var popup_conf_onload = {
+                $btn: null,
+                $popup: $(".mod_pop_edit_choose")
+            }
+            var comon_popup_object_onload = new edu_component.comon_popup(popup_conf_onload);
+            comon_popup_object_onload.init();
+
+            $.get("/mdeditor/GetIsTip", function (data) {
+                if (data == "true") {
+                    $(".mod_pop_edit_choose").show();
+                    $("#start_md,.start_conf").click(function () {
+                        $(".close").click();
+                    });
+
+                    $(".close").click(function () {
+                        if ($("#no_tishi").is(":checked")) {
+                            $.get("/MdEditor/SetDefaultTip?BlogId=0"+"&r="+Math.random(), function () {
+                        //alert("更改完成");
+                    });
+                }
+            });
+                }
+                else {
+                    $(".mod_pop_edit_choose").hide();
+                }
+            });
+
+           
+        });
+    </script>
+    <!--编辑器load引导页面end-->
+
+
+
+
+
+
+
+<div id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"></div>
+  </div>
+</div><i title="Raphaël Colour Picker" style="display: none; color: white;"></i><ul class="complete_list"></ul><ul class="complete_list" style="display: none;"></ul><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, sans-serif;"></div></div></body><input style="width:1px;height:1px;border:none;margin:0;padding:0;" tabindex="-1"></html>
