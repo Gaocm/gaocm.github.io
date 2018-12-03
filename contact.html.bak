@@ -17,11 +17,11 @@
         <h1 class="STYLE1">Congming Gao </h1></div>
       <nav>
         <ul class="lavaLampWithImage" id="lava_menu" name="lava_menu">
-          <li class="current"><a href="index.html" class="STYLE2">home</a></li>
+          <li><a href="index.html" class="STYLE2">home</a></li>
           <li><a href="research.html" class="STYLE2">research</a></li>
           <li><a href="publications.html" class="STYLE2">publications</a></li>
           <li><a href="link.html" class="STYLE2">link</a></li>
-          <li><a href="contact.html" class="STYLE2">contact</a></li>
+          <li class="current"><a href="contact.html" class="STYLE2">contact</a></li>
         </ul>
       </nav>
     </header>
@@ -35,9 +35,9 @@
       <div id="content">
         <h1>Links</h1>
         
-		<p>* Email: gaocm@cqu.edu.cn</p>
+		<p>* Email: gaocm@cqu.edu.cn	/	gaocm92@gmail.com</p>
 		
-		<p>* Phone: +86 153 2032 4331  +1 (412)708-5239</p>
+		<p>* Phone: +86 153 2032 4331	/	+1 (412)708-5239</p>
 		
 		<p>* Wechat: gcm382112762</p>
 		
