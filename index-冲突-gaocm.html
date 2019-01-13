@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Congming Gao</title>
+  <meta name="description" content="congming gao" />
+  <meta name="keywords" content="congming gao, congming" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <style type="text/css">
+<!--
+.STYLE1 {font-size: medium}
+.STYLE2 {font-family: "Courier New", Courier, monospace}
+-->
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <h1 class="STYLE1">Congming Gao </h1>
+      </div>
+      <nav>
+        <ul class="lavaLampWithImage" id="lava_menu" name="lava_menu">
+          <li class="current"><a href="index.html" class="STYLE2">home</a></li>
+          <li><a href="research.html" class="STYLE2">research</a></li>
+          <li><a href="publications.html" class="STYLE2">publications</a></li>
+          <li><a href="link.html" class="STYLE2">link</a></li>
+          <li><a href="contact.html" class="STYLE2">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <ul class="slideshow">
+        <li class="show"><img width="950" height="350" src="images/1.jpg" alt="" /></li>
+        <li><img width="950" height="350" src="images/2.jpg" alt="" /></li>
+        <li><img width="950" height="350" src="images/3.jpg" alt="" /></li>
+      </ul>
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3><img src="images/me.jpg" alt="CM Gao" width="190" height="256"></h3>
+        </div>
+      </div>
+      <div id="content">
+        <h1>About me</h1>
+        <p>Hello ! My name is Congming Gao, and I'm currently a Ph.D student in Computer Science at the <a href="http://english.cqu.edu.cn/">Chongqing University </a>, China. <br>
+          <br>
+          My research interests gravitate toward Computer Architecture, Emerging Non-Volatile Memory, Flash Memory, and Embedded and Real-Time Systems. I'm also curious about all mathematics and sciences in general. 
+          <br>
+          <br>
+          In 2014, I obtained a Bachelor Degree in Computer Science at CQU with great honours. <br>
+In 2014.09,         I stayed at the same school  to complete a Ph.D under the supervision of <a href="https://faculty.ecnu.edu.cn/s/3969/t/39253/main.jspy">Dr. Shi </a>, <a href="http://www.bdsc.site/team-page/193.html">Dr. Liu </a> and <a href="https://faculty.ecnu.edu.cn/s/3741/main.jspy">Dr. Edwin Sha </a> to complete my education. <br>
+Now, I'm a Visiting Scholar with the  Department  of  Electrical  andComputer Engineering, <a href="https://www.pitt.edu/">University of Pittsburgh</a> under the supervision of <a href="https://www.engineering.pitt.edu/jun_yang/">Dr. Yang </a> and <a href="http://people.cs.pitt.edu/~zhangyt/">Dr. Zhang </a>. <br>
+        </p>
+      </div>
+    </div>
+    <footer>
+      <p class="STYLE2">&copy; 2016 Congming Gao. All Rights Reserved.</p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#lava_menu").lavaLamp({
+        fx: "backout",
+        speed: 700
+      });
+    });
+  </script>
+ 
+ <script language=JavaScript>
+	<!--
+	var caution = false
+	function setCookie(name, value, expires, path, domain, secure) {
+	var curCookie = name + "=" + escape(value) +
+		((expires) ? "; expires=" + expires.toGMTString() : "") +
+		((path) ? "; path=" + path : "") +
+		((domain) ? "; domain=" + domain : "") +
+		((secure) ? "; secure" : "")
+	if (!caution || (name + "=" + escape(value)).length <= 4000)
+		document.cookie = curCookie
+	else
+		if (confirm("Cookie exceeds 4KB and will be cut!"))
+			document.cookie = curCookie
+	}
+	function getCookie(name) {
+		var prefix = name + "="
+		var cookieStartIndex = document.cookie.indexOf(prefix)
+		if (cookieStartIndex == -1)
+			return null
+		var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+		if (cookieEndIndex == -1)
+			cookieEndIndex = document.cookie.length
+			return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+	}
+	function deleteCookie(name, path, domain) {
+		if (getCookie(name)) {
+			document.cookie = name + "=" +
+				((path) ? "; path=" + path : "") +
+				((domain) ? "; domain=" + domain : "") +
+				"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+		}
+	}
+	function fixDate(date) {
+		var base = new Date(0)
+		var skew = base.getTime()
+		if (skew > 0)
+			date.setTime(date.getTime() - skew)
+	}
+	var now = new Date()
+	fixDate(now)
+	now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+	var visits = getCookie("counter")
+	if (!visits)
+		visits = 1
+	else
+		visits = parseInt(visits) + 1
+	setCookie("counter", visits, now)
+	document.write("PV： " + visits)
+	// -->
+</script>
+ 
+  
+  
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

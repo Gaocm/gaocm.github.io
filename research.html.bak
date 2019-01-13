@@ -41,13 +41,13 @@
       <div id="sidebar_container"></div>
 	  
 	   <div id="content">
-	   	<p>* Flash Memory;</p> 
-	   	
-	  	<p>* IO Scheduling; </p>
-	  	
-	  	<p>* Embedded Systems; </p>
-	  	
-	  	<p>* Parallelism. </p>
+	   	<p>* Flash Memory;
+	   		<br>
+	  	* IO Scheduling;
+	  	<br>
+	  	* Embedded Systems; 
+	  	<br>
+	  	* Parallelism. </p>
    	
 
       </div>
