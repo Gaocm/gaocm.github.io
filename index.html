@@ -1,84 +1,183 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-  <title>Congming Gao</title>
-  <meta name="description" content="congming gao, congming, congming gao homepage" />
-  <meta name="keywords" content="congming gao, congming, congming gao homepage" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <!-- modernizr enables HTML5 elements and feature detects -->
-  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-  <style type="text/css">
 <!--
-.STYLE1 {font-size: medium}
-.STYLE2 {font-family: "Courier New", Courier, monospace}
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-  </style>
-</head>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Congming Gao</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Your Name, your field" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- animation-effect -->
+<link href="css/animate.min.css" rel="stylesheet"> 
+<script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<!-- //animation-effect -->
+<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
 
+</head>
+	
 <body>
-  <div id="main">
-    <header>
-      <div id="logo">
-        <h1 class="STYLE1">Congming Gao </h1>
-      </div>
-      <nav>
-        <ul class="lavaLampWithImage" id="lava_menu" name="lava_menu">
-          <li class="current"><a href="index.html" class="STYLE2">home</a></li>
-          <li><a href="research.html" class="STYLE2">research</a></li>
-          <li><a href="publications.html" class="STYLE2">publications</a></li>
-          <li><a href="link.html" class="STYLE2">link</a></li>
-          <li><a href="contact.html" class="STYLE2">contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="site_content">
-      <ul class="slideshow">
-        <li class="show"><img width="950" height="350" src="images/ssd-wiki.jpg" alt="" /></li>
-        <li><img width="950" height="350" src="images/architecture.jpg" alt="" /></li>
-        <li><img width="950" height="350" src="images/roadmap.jpg" alt="" /></li>
-      </ul>
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <h3><img src="images/me.jpg" alt="CM Gao" width="190" height="256"></h3>
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index.html">Congming Gao</a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--francisco">
+						<ul class="nav navbar-nav menu__list">
+							<li class="menu__item menu__item--current"><a href="index.html" class="menu__link"><span class="menu__helper">Home</span></a></li>
+							<li class="menu__item"><a href="research.html" class="menu__link"><span class="menu__helper">Research</span></a></li>
+							<li class="menu__item"><a href="publication.html" class="menu__link"><span class="menu__helper">Publications</span></a></li>
+							<li class="menu__item"><a href="images/CV.pdf" class="menu__link" target="_blank"><span class="menu__helper">CV</span></a></li>
+							<li class="menu__item"><a href="#CONTACT" class="menu__link"><span class="menu__helper">Contact</span></a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+<!-- //header -->
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+			<h2 class="animated wow slideInLeft"><a href="index.html">Welcome to my homepage &#x1F92A;</a></h2>
+		</div>
+	</div>
+<!-- //banner -->
+<!-- about -->
+<div class="about">
+    <div class="container">
+        <div class="about-grids">
+            <div class="col-md-6 about-grids-left">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body panel_text">
+								Hello ! My name is Congming Gao, and I'm currently a Ph.D student in Computer Science at the <b>Chongqing University</b>, China. 
+								<br>
+								<br>
+								My research interests gravitate toward <b>Computer Architecture</b>, <b>Emerging Non-Volatile Memory</b>, <b>Flash Memory</b>, and <b>Embedded and Real-Time Systems</b>. I'm also curious about all mathematics and sciences in general.  
+								<br>
+								<br>
+								In 2014, I obtained a Bachelor Degree in Computer Science at CQU with great honours. 
+								<br>
+								In 2014.09, I stayed at the same school to complete a Ph.D under the supervision of <b>Dr. Liang Shi</b> and <b>Dr. Kai Liu</b> to complete my education. 
+								<br>
+								<br>
+								Now, I'm a Visiting Scholar with the Department of Electrical andComputer Engineering, University of Pittsburgh under the supervision of <b>Dr. Jun Yang</b> and <b>Dr. Youtao Zhang</b>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><link rel="stylesheet" href="css/animate.min.css">
+            <div class="col-md-6 about-grids-right animated wow slideInRight" data-wow-delay="0s">
+                <img src="images/me.gif" alt=" " class="img-responsive" />
+            </div>
+            <div class="clearfix"> </div>
         </div>
-      </div>
-      <div id="content">
-        <h1>About me</h1>
-        <p>Hello ! My name is Congming Gao, and I'm currently a Ph.D student in Computer Science at the <a href="http://english.cqu.edu.cn/">Chongqing University </a>, China. <br>
-          <br>
-          My research interests gravitate toward Computer Architecture, Emerging Non-Volatile Memory, Flash Memory, and Embedded and Real-Time Systems. I'm also curious about all mathematics and sciences in general. 
-          <br>
-          <br>
-          In 2014, I obtained a Bachelor Degree in Computer Science at CQU with great honours. <br>
-In 2014.09,         I stayed at the same school  to complete a Ph.D under the supervision of <a href="https://faculty.ecnu.edu.cn/s/3969/t/39253/main.jspy">Dr. Shi </a>, <a href="http://www.bdsc.site/team-page/193.html">Dr. Liu </a> and <a href="https://faculty.ecnu.edu.cn/s/3741/main.jspy">Dr. Edwin Sha </a> to complete my education. <br>
-Now, I'm a Visiting Scholar with the  Department  of  Electrical  andComputer Engineering, University of Pittsburgh under the supervision of <a href="https://www.engineering.pitt.edu/jun_yang/">Dr. Yang </a> and <a href="http://people.cs.pitt.edu/~zhangyt/">Dr. Zhang </a>. <br>
-        </p>
-      </div>
     </div>
-    <footer>
-      <p class="STYLE2">&copy; 2016 Congming Gao. All Rights Reserved.</p>
-    </footer>
-  </div>
-  <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-  <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
-  <script type="text/javascript" src="js/image_fade.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      $("#lava_menu").lavaLamp({
-        fx: "backout",
-        speed: 700
-      });
-    });
-  </script>
- 
-<script type="text/javascript" src="//ra.revolvermaps.com/0/0/1.js?i=0mywko1lzjt&amp;s=194&amp;m=8&amp;v=true&amp;r=false&amp;b=f2f2f2&amp;n=true&amp;c=ff0000" async="async"></script>
- 
-  
-  
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</div>
+<!-- //about -->
+<!-- footer -->
+<div class="footer"><a name="CONTACT"></a>
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay="0s">
+                    <h3>Contact</h3>
+                    <p>Email: gaocm92 &alpha; gmail.com</p>
+                    <p>Phone: +86 153 2032 4331 / +1 412 708 5239</p>
+				<!--	<div class="social">
+						<ul class="social-nav model-8">
+							<li><a href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN" class=""><i>Google Scholar</i></a></li>
+							<li><a href="https://dblp.org/pers/hd/g/Gao:Congming" class=""><i>DBLP</i></a></li>
+							<li><a href="https://blog.csdn.net/g382112762" class=""><i>CSDN Blog</i></a></li>
+							<li><a href="#" class="p"><i></i></a></li>
+						</ul>
+					</div>-->
+				</div>
+               <div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".01s">
+                    <br><br><br>
+                    <p><a href="https://dblp.org/pers/hd/g/Gao:Congming" target="view_frame">DBLP: Congming Gao</a></p>
+                    <p><a href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN" target="view_frame">Google Scholar: Congming Gao</a></p>
+                </div>
+                <div class="clearfix"> </div>
+			</div>
+			<div class="footer-grids1">
+				<div class="footer-grids1-left animated wow slideInLeft">
+                    <ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="publication.html">Publications</a></li>
+						<li><a href="images/CV.pdf">CV</a></li>
+						<li><a href="#CONTACT">Contact</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
 </body>
 </html>
