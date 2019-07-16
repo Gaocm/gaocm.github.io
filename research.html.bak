@@ -1,0 +1,265 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Congming Gao</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Congming Gao, Gao congming, gaocm, congming" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- animation-effect -->
+<link href="css/animate.min.css" rel="stylesheet"> 
+<script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<!-- //animation-effect -->
+<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+
+</head>
+	
+<body>
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index.html">Congming Gao</a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--francisco">
+						<ul class="nav navbar-nav menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link"><span class="menu__helper">Home</span></a></li>
+							<li class="menu__item menu__item--current"><a href="research.html" class="menu__link"><span class="menu__helper">Research</span></a></li>
+							<li class="menu__item"><a href="publication.html" class="menu__link"><span class="menu__helper">Publications</span></a></li>
+							<li class="menu__item"><a href="images/CV.pdf" class="menu__link" target="_blank"><span class="menu__helper">CV</span></a></li>
+							<li class="menu__item"><a href="#CONTACT" class="menu__link"><span class="menu__helper">Contact</span></a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+<!-- //header -->
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+			<h2 class="animated wow slideInLeft" data-wow-delay="0s"><a href="index.html">Home</a> / <span>Research</span></h2>
+		</div>
+	</div>
+<!-- //banner -->
+<!-- about -->
+	<div class="about">
+		<div class="container">
+            <h3 class="animated wow zoomIn" data-wow-delay="0s">Parallelism Exploration #1</h3>
+			<p class="qui animated wow zoomIn" data-wow-delay="0s">Boosting the performance of NAND flash memory based SSD via exploiting the parallelism of SSD.</p>
+			<div class="about-grids">
+				<div class="col-md-6 about-grids-left">
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default">
+							<div class="panel-heading panel-heading-sub" role="tab" id="headingOne">
+							  <h4 class="panel-title asd">
+								<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Parallel Issue Queuing #1
+								</a>
+							  </h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							  <div class="panel-body panel_text">
+									The utilization of flash chips (i.e. the number of flash chips being accessed simultaneously) is seriously low. Our study shows that the low chip utilization is caused by the access conflict among I/O requests. In this work, we propose Parallel Issue Queuing (PIQ), a novel I/O scheduler at the host system, to minimize the access conflicts between I/O requests. The proposed PIQ schedules I/O requests without conflicts into the same batch and I/O requests with conflicts into different batches. Hence multiple I/O requests in one batch can be fulfilled simultaneously by exploiting the rich parallelism of SSD. And because PIQ is implemented at the host side, it can take advantage of rich resource at host system such as main memory and CPU, which makes the overhead negligible.
+							  </div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading panel-heading-sub" role="tab" id="headingTwo">
+							  <h4 class="panel-title asd">
+								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Subtopic #2
+								</a>
+							  </h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							   <div class="panel-body panel_text">
+								Within SSDs, there are many internal activities, such as garbage collection and wear leveling induced read, write and erase operations, to solve the issues of inability of in-place-updates and limited lifetime.When internal activities are triggered on a chip, the chip will be blocked.Our preliminary studies on several workloads show that when internal activities are frequently trigged, the host I/O performance will be significantly impacted because of the access conflict between them. In this work, in order to improve the access conflict induced performance degradation, a novel access conflict minimization scheme is proposed. The basic idea of the scheme is motivated by an interesting observation in SSDs: several chips are idle when other chips are busy with internal activities and host I/O requests. Based on this observation, we propose to schedule internal activities induced operations for minimized access conflict by exploiting the idleness of the multiple chips of SSDs. This approach is realized by two steps: First, read internal activities accessed data to the controller; Second, by exploiting the idle chips during internal activities, write internal activities accessed data back to these idle chips. With this scheme, the internal activities can be processed with minimized access conflict to the host requests.
+							  </div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading panel-heading-sub" role="tab" id="headingThree">
+							  <h4 class="panel-title asd">
+								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Subtopic #3
+								</a>
+							  </h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							   <div class="panel-body panel_text">
+								Solid state drives (SSDs) are constructed with multiple level parallel organization, including channels, chips, dies and planes. Among these parallel levels, plane level parallelism, which is the last level parallelism of SSDs, has the most strict restrictions. Only the same type of operations which access the same address in different planes can be processed in parallel. In order to maximize the access performance, several previous works have been proposed to exploit the plane level parallelism for host accesses and internal operations of SSDs. However, our preliminary studies show that the plane level parallelism is far from well utilized and should be further improved. The reason is that the strict restrictions of plane level parallelism are hard to be satisfied. In this work, a from plane to die parallel optimization framework is proposed to exploit the plane level parallelism through smartly satisfying the strict restrictions all the time. In order to achieve the objective, there are at least two challenges. First, due to that host access patterns are always complex, receiving multiple same-type requests to different planes at the same time is uncommon. Second, there are many internal activities, such as garbage collection (GC), which may destroy the restrictions. In order to solve above challenges, two schemes are proposed in the SSD controller: First, a die level write construction scheme is designed to make sure there are always N pages of data written by each write operation. Second, in a further step, a die level GC scheme is proposed to activate GC in the unit of all planes in the same die. Combing the die level write and die level GC, write accesses from both host write operations and GC induced valid page movements can be processed in parallel at all time. 
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 about-grids-right animated wow slideInRight" data-wow-delay="0s">
+					<img src="images/parallelism.jpg" alt=" " class="img-responsive" />
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //about -->
+<!-- team -->
+<div class="team">
+    <div class="container">
+        <h3 class="animated wow zoomIn" data-wow-delay="0s">Research #2</h3>
+        <div class="about-grids">
+            <div class="col-md-6 about-grids-left">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            
+                            <div class="panel-body panel_text">
+                                Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                                eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
+                                rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
+                                consequatur aut perferendis doloribus asperiores repellat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 about-grids-right animated wow slideInLeft" data-wow-delay="0s">
+                <img src="images/3.jpg" alt=" " class="img-responsive" />
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //about -->
+<!-- about -->
+<div class="about">
+    <div class="container">
+        <h3 class="animated wow zoomIn" data-wow-delay="0s">Research #3</h3>
+        <p class="qui animated wow zoomIn" data-wow-delay="0s">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil. </p>
+        <div class="about-grids">
+            <div class="col-md-6 about-grids-left">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body panel_text">
+                                Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                                eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum
+                                rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
+                                consequatur aut perferendis doloribus asperiores repellat.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 about-grids-right animated wow slideInRight" data-wow-delay="0s">
+                <img src="images/3.jpg" alt=" " class="img-responsive" />
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //about -->
+<!-- footer -->
+	<div class="footer"><a name="CONTACT"></a>
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".01s">
+    				<h3>Contact</h3>
+        				<p>Email: gaocm92 &alpha; gmail.com</p>
+        				<p>Phone: +86 153 2032 4331 / +1 412 708 5239</p>
+						<!--	<div class="social">
+							<ul class="social-nav model-8">
+							<li><a href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN" class=""><i>Google Scholar</i></a></li>
+							<li><a href="https://dblp.org/pers/hd/g/Gao:Congming" class=""><i>DBLP</i></a></li>
+							<li><a href="https://blog.csdn.net/g382112762" class=""><i>CSDN Blog</i></a></li>
+							<li><a href="#" class="p"><i></i></a></li>
+							</ul>
+							</div>-->
+						</div>
+   					 <div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".01s">
+        				 <br><br><br>
+        				 <p><a href="https://dblp.org/pers/hd/g/Gao:Congming" target="view_frame">DBLP: Congming Gao</a></p>
+        				 <p><a href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN" target="view_frame">Google Scholar: Congming Gao</a></p>
+   				  	</div>
+                <div class="clearfix"> </div>
+			</div>
+			<div class="footer-grids1">
+				<div class="footer-grids1-left animated wow slideInLeft">
+                    <ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="publication.html">Publications</a></li>
+						<li><a href="images/CV.pdf">CV</a></li>
+						<li><a href="#CONTACT">Contact</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

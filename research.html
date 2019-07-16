@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Your Name, your field" />
+<meta name="keywords" content="Congming Gao, Gao congming, gaocm, congming" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -89,8 +89,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- about -->
 	<div class="about">
 		<div class="container">
-            <h3 class="animated wow zoomIn" data-wow-delay="0s">Research #1</h3>
-			<p class="qui animated wow zoomIn" data-wow-delay="0s">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
+            <h3 class="animated wow zoomIn" data-wow-delay="0s">Parallelism Exploration #1</h3>
+			<p class="qui animated wow zoomIn" data-wow-delay="0s">Boosting the performance of NAND flash memory based SSD via exploiting the parallelism of SSD.</p>
 			<div class="about-grids">
 				<div class="col-md-6 about-grids-left">
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -98,16 +98,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="panel-heading panel-heading-sub" role="tab" id="headingOne">
 							  <h4 class="panel-title asd">
 								<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Subtopic #1
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Parallel Issue Queuing #1
 								</a>
 							  </h4>
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 							  <div class="panel-body panel_text">
-									Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe 
-									eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum 
-									rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias 
-									consequatur aut perferendis doloribus asperiores repellat.
+									The utilization of flash chips (i.e. the number of flash chips being accessed simultaneously) is seriously low. Our study shows that the low chip utilization is caused by the access conflict among I/O requests. In this work, we propose Parallel Issue Queuing (PIQ), a novel I/O scheduler at the host system, to minimize the access conflicts between I/O requests. The proposed PIQ schedules I/O requests without conflicts into the same batch and I/O requests with conflicts into different batches. Hence multiple I/O requests in one batch can be fulfilled simultaneously by exploiting the rich parallelism of SSD. And because PIQ is implemented at the host side, it can take advantage of rich resource at host system such as main memory and CPU, which makes the overhead negligible.
 							  </div>
 							</div>
 						</div>
@@ -115,13 +112,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="panel-heading panel-heading-sub" role="tab" id="headingTwo">
 							  <h4 class="panel-title asd">
 								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Subtopic #2
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Parallel GC #2
 								</a>
 							  </h4>
 							</div>
 							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 							   <div class="panel-body panel_text">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+								Within SSDs, there are many internal activities, such as garbage collection and wear leveling induced read, write and erase operations, to solve the issues of inability of in-place-updates and limited lifetime.When internal activities are triggered on a chip, the chip will be blocked.Our preliminary studies on several workloads show that when internal activities are frequently trigged, the host I/O performance will be significantly impacted because of the access conflict between them. In this work, in order to improve the access conflict induced performance degradation, a novel access conflict minimization scheme is proposed. The basic idea of the scheme is motivated by an interesting observation in SSDs: several chips are idle when other chips are busy with internal activities and host I/O requests. Based on this observation, we propose to schedule internal activities induced operations for minimized access conflict by exploiting the idleness of the multiple chips of SSDs. This approach is realized by two steps: First, read internal activities accessed data to the controller; Second, by exploiting the idle chips during internal activities, write internal activities accessed data back to these idle chips. With this scheme, the internal activities can be processed with minimized access conflict to the host requests.
 							  </div>
 							</div>
 						</div>
@@ -129,20 +126,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="panel-heading panel-heading-sub" role="tab" id="headingThree">
 							  <h4 class="panel-title asd">
 								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Subtopic #3
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Parallel all the time #3
 								</a>
 							  </h4>
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 							   <div class="panel-body panel_text">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+								Solid state drives (SSDs) are constructed with multiple level parallel organization, including channels, chips, dies and planes. Among these parallel levels, plane level parallelism, which is the last level parallelism of SSDs, has the most strict restrictions. Only the same type of operations which access the same address in different planes can be processed in parallel. In order to maximize the access performance, several previous works have been proposed to exploit the plane level parallelism for host accesses and internal operations of SSDs. However, our preliminary studies show that the plane level parallelism is far from well utilized and should be further improved. The reason is that the strict restrictions of plane level parallelism are hard to be satisfied. In this work, a from plane to die parallel optimization framework is proposed to exploit the plane level parallelism through smartly satisfying the strict restrictions all the time. In order to achieve the objective, there are at least two challenges. First, due to that host access patterns are always complex, receiving multiple same-type requests to different planes at the same time is uncommon. Second, there are many internal activities, such as garbage collection (GC), which may destroy the restrictions. In order to solve above challenges, two schemes are proposed in the SSD controller: First, a die level write construction scheme is designed to make sure there are always N pages of data written by each write operation. Second, in a further step, a die level GC scheme is proposed to activate GC in the unit of all planes in the same die. Combing the die level write and die level GC, write accesses from both host write operations and GC induced valid page movements can be processed in parallel at all time. 
 							  </div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 about-grids-right animated wow slideInRight" data-wow-delay="0s">
-					<img src="images/3.jpg" alt=" " class="img-responsive" />
+					<img src="images/parallelism.jpg" alt=" " class="img-responsive" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
