@@ -158,13 +158,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="panel-heading panel-heading-sub" role="tab" id="headingOne">
 							  <h4 class="panel-title asd">
 								<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Parallel Issue Queuing #1
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>Reprogrammable SSD #1
 								</a>
 							  </h4>
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 							  <div class="panel-body panel_text">
-									The utilization of flash chips (i.e. the number of flash chips being accessed simultaneously) is seriously low. Our study shows that the low chip utilization is caused by the access conflict among I/O requests. In this work, we propose Parallel Issue Queuing (PIQ), a novel I/O scheduler at the host system, to minimize the access conflicts between I/O requests. The proposed PIQ schedules I/O requests without conflicts into the same batch and I/O requests with conflicts into different batches. Hence multiple I/O requests in one batch can be fulfilled simultaneously by exploiting the rich parallelism of SSD. And because PIQ is implemented at the host side, it can take advantage of rich resource at host system such as main memory and CPU, which makes the overhead negligible.
+									To boost the capacity of SSDs, the scaling of SSD devices has evolved from planar (2D) NAND SSD to 3D NAND SSD. Compared with 2D SSD, 3D SSD is designed to stack more layers into one block, constructing one block with more flash pages. However, keeping stacking more layers is encountering a bottleneck due to the limited space of control circuits for each block. To further increase the capacity of 3D TLC SSDs, reprogram operation arises as an effective method to store more data in a flash cell. In this work, the feasibility of reprogram operation on 3D TLC SSDs is verified firstly. Then, based on the restrictions of reprogram operation on 3D TLC SSDs, a reprogrammable SSD (ReSSD) design is proposed to increase the capacity of 3D TLC SSDs by reprogramming flash cells twice before an erase. In return, the time-consuming and wear-intensive garbage collection can also be optimized due to the reduction of its frequency and time cost. As a result, ReSSD is able to achieve larger capacity, better endurance and performance compared with conventional 3D SSDs.
 							  </div>
 							</div>
 						</div>
