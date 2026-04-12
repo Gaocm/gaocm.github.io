@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <!-- Metadata -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="website"/>
+        <meta name="author" content="Congming Gao"/>
+        <title>Congming Gao @ XMU</title>
+        
+        <!-- Font Awesome icons -->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+
+		
+        <!-- Google fonts-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <!-- Core theme CSS -->
+        <link href="styles/styles.css" rel="stylesheet"/>
+
+    </head>
+
+    <body>
+
+        <!-- Moving particles -->
+        <canvas id="canvas"></canvas>
+
+        <!-- Progress bar on top -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Back to top button -->
+        <a id="back-to-top-button"></a>
+
+        <!-- Toggle dark/light theme button -->
+        <button class="toggle-theme-button" onclick="toggleTheme()">☀️</button>
+        
+        <!-- Assitant icon saying about theme changes -->
+        <div class="popup-icon-container" id="popupIconContainer" draggable="true">
+        </div>
+        
+        <!-- Dismissal area for assistant icon -->
+        <div class="dismissal-area" id="dismissalArea">&#10006;</div>
+
+        <!-- Navigation bar -->
+        <!-- Fusion of jQuery slidebar (https://codepen.io/BeshoyRomany/pen/qmNPwN) and animated hamburger menu (https://codepen.io/amberweinberg/pen/yeqJgG) -->
+        <nav>
+            <a class="nav-toggle-btn" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul>
+                <li><p onclick="scrollToTopDiv('html')"><span class="emoji">🏡</span> <span class="text">Home</span></p></li>
+                <li><p onclick="scrollToTopDiv('#updates')"><span class="emoji">📜</span> <span class="text">Updates</span></p></li>
+                <li><p onclick="scrollToTopDiv('#research')"><span class="emoji">📚</span> <span class="text">Publications</span></p>
+                </li>
+                <li><p onclick="scrollToTopDiv('#awards')"><span class="emoji">🏆</span> <span class="text">Awards</span></p>
+                </li>
+                <li><p onclick="scrollToTopDiv('#activities')"><span class="emoji">🤝</span> <span class="text">Activities</span></p>
+                </li>                
+                <!--
+                <li><p onclick="scrollToTopDiv('#resources')"><span class="emoji">⛏️</span> <span class="text">resources</span></p></li>-->
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <div class="container" style="padding-top: 3rem;">
+            <!-- About section -->
+
+<div class="row mb-4">
+    <div class="col-lg-2 col-md-4">
+        <div class="ring-container">
+            <div class="ring">
+                <div class="hollow-ring">
+                    <img class="profile-image" src="assets/img/congminggao.png" alt="Congming Gao" />
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="social-icons">
+             <a class="social-icon" href="https://scholar.google.com/citations?user=vjpzagIAAAAJ&hl=zh-CN" target="_blank" rel="noopener" title="Google Scholar"><i class="fa fa-graduation-cap" style="font-size: 35px; color: #4285f4"></i></a> 
+              <a class="social-icon" href="https://dblp.org/pid/152/3982.html" target="_blank" rel="noopener" title="DBLP"><i class="ai ai-dblp" style="font-size: 35px; color: #004b91"></i></a> 
+             <a class="social-icon" href="assets/doc/CongmingGao.pdf" target="_blank" rel="noopener" title="Resume"><i class="fas fa-file-alt" style="font-size: 35px; color: #bd5d38"></i></a> 
+             <a class="social-icon" id="contact-card-trigger" title="Contact Info"><i class="fa fa-id-card" style="font-size: 35px; color: #cbbb5f"></i></a> 
+        </div>
+        <p></p>
+    </div>
+
+    <!-- Inspired by Thanh Tran -- https://codepen.io/thanhrossi/pen/pvOEzq -->
+    <!-- Re-written, redesigned, and integrated (from HTML (Pug) and CSS (Less) to pure HTML and CSS) -->
+    <div class="contact-card-overlay" id="overlay-bg">
+        <div class="information_card">
+            <div id="front_end_card">
+                <div class="front">
+                    <div class="contact-info-card">
+                        <div class="code-line"><span class="line-number">1</span><span class="code-content"><span class="keyword">class</span> <span class="namespace">ContactInformationCard</span>: </span></div>
+                        <div class="code-line"><span class="line-number">2</span><span class="code-content">  <span class="keyword">def</span> <span class="function">__init__</span>(<span class="self">self</span>):</span></div>
+                        <div class="code-line"><span class="line-number">3</span><span class="code-content">    <span class="self">self</span>.<span class="self">dept</span>  = <span class="string">"school of informatics @ xmu"</span> </span></div>
+                        <div class="code-line"><span class="line-number">4</span><span class="code-content">    <span class="self">self</span>.<span class="self">email</span> = <span class="string">"gaocm@xmu.edu.cn; gaocm92@gmail.com"</span> </span></div>
+                        <div class="code-line"><span class="line-number">5</span><span class="code-content">    <span class="self">self</span>.<span class="self">address</span> = <span class="string">"Room 227, Building #3, School of Informatics, Xiang'an Campus, Xiamen University, 361102."</span> </span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-10 col-md-8">
+        <h2>
+            Congming Gao 
+             <span class="text-primary"></span> 
+             <span id="volumeEmoji" role="button"></span> 
+        </h2>
+        <p></p>
+        I am currently an Associate Professor at the <a href="https://informatics.xmu.edu.cn/en/index.htm/" target="_blank">School of Informatics</a>, <a href="http://en.xmu.edu.cn/" target="_blank">Xiamen University</a>. Previously, I served as a Postdoctoral Researcher in the <a href="http://www.cs.tsinghua.edu.cn/" target="_blank">Department of Computer Science and Technology</a> at <a href="http://www.tsinghua.edu.cn/" target="_blank">Tsinghua University</a>. I earned my Ph.D. in Computer Science from the <a href="http://www.cs.cqu.edu.cn/" target="_blank">College of Computer Science</a>, <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. My research background also includes positions as a Research Assistant at the <a href="https://www.cs.cityu.edu.hk/" target="_blank">City University of Hong Kong (CityU)</a> and as a Visiting Researcher in the <a href="https://www.engineering.pitt.edu/" target="_blank">Department of Electrical and Computer Engineering</a> at the <a href="http://www.pitt.edu/" target="_blank">University of Pittsburgh (PITT)</a>.
+        <p></p>
+        <div class="codebox">
+            I do research in storage system, mainly focusing on <code> Flash Memory, Memory Management and File System</code>. My research results are published in top-tier international conferences, such as MICRO, ISCA, ASPLOS, HPCA, FAST, ICDE, DAC. My academic excellence has been honored with several awards, including Tenth Young Elite Scientists Sponsorship Program by CAST, ACM SIGCSE China Rising Star Award (2024), Xiaomi Young Talents Program, IEEE NVMSA Best Paper Award (2024/2025), and Alibaba Cloud-CCF Storage Committee Outstanding Paper Award (2019/2020).
+            <p></p> 
+            
+        </div>
+    </div>
+</div>
+
+<!-- Updates section -->
+
+<hr />
+
+<div class="row" id="updates">
+    <div class="col">
+        <h2 clss="mb-5">📜 Updates</h2>
+        <p></p>
+        <div class="owl-carousel owl-theme">
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/ISCA2026.png" class="w-full rounded-lg" />
+            <div class="news-desc">One paper has been accepted to <hightlight>ISCA 2026</hightlight></div>
+            <div class="news-time">2026/03</div>
+            </div>
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/ICDE2026.png" class="w-full rounded-lg" />
+            <div class="news-desc">One paper has been accepted to <hightlight>ICDE 2026</hightlight></div>
+            <div class="news-time">2026/02</div>
+            </div>
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/ASPLOS2026.png" class="w-full rounded-lg" />
+            <div class="news-desc">One paper has been accepted to <hightlight>ASPLOS 2026</hightlight></div>
+            <div class="news-time">2026/01</div>
+            </div>
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/NVMSA2025-BPA.png" class="w-full rounded-lg" />
+            <div class="news-desc">We won the <hightlight>Best Paper Award</hightlight> of IEEE NVMSA 2025</div>
+            <div class="news-time">2025/08</div>
+            </div>
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/FAST2025.png" class="w-full rounded-lg" />
+            <div class="news-desc">One paper has been accepted to <hightlight>FAST 2025</hightlight></div>
+            <div class="news-time">2024/12</div>
+            </div>
+            
+            <div class="news-card">
+            <img src="assets/img/updates_gan/MICRO2024.png" class="w-full rounded-lg" />
+            <div class="news-desc">One paper has been accepted to <hightlight>MICRO 2024</hightlight></div>
+            <div class="news-time">2024/07</div>
+            </div>                    
+        </div>
+        <p></p>
+    </div>
+</div>
+
+<!-- Research section -->
+
+<hr />
+
+<div class="row" id="research">
+    <div class="col">
+        <h2 clss="mb-5">📚 Publications</h2>
+        <p></p>
+        <div id="filters-project">            
+            <button class="filter-button active" data-filter="selected">Selected</button>
+            <button class="filter-button" data-filter="top">Top-Tier</button>
+            <button class="filter-button" data-filter="*">All</button>
+            
+        </div>
+        <p></p>
+        <div id="projects" class="isotope">
+            
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <!--<div class="col-sm-4">
+            <img width="100%" height="auto" class="w-full rounded-lg" src="assets/img/demo_refined_mapping.gif" />
+        </div>-->
+        <div class="col-sm-14">
+            
+            <b>[ISCA'26] LOONG: Utilizing Long-Stride Reprogram to Enhance the Performance of SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 53rd Annual International Symposium on Computer Architecture, June 2026</i>             
+            <br />
+            <u><b>Congming Gao</b></u>, Jiancong Zheng, Xufeng Yang, Qiao Li, Jian Chen, Tianyu Ren, Zheng Wan, Yina Lv, Xin Xin, Min Ye, Chun Jason Xue, Jiwu Shu.
+            <br />
+            <!-- <a href="xxxx" target="_blank" rel="noopener">[PDF]</a> 
+             | <a href="https://github.com/xxxx" target="_blank" rel="noopener">[CODE]</a> 
+             | <a href="https://youtu.bexxxx" target="_blank" rel="noopener">[DEMO]</a> 
+             | <a href="https://xxxx" target="_blank" rel="noopener">[SLIDES]</a> 
+             | <a href="https://youtu.be/xxxx" target="_blank" rel="noopener">[TALK]</a> 
+             | <a href="https://xxxxx" target="_blank" rel="noopener">[POSTER]</a> 
+            <br />
+            <u><b><i>Abstract</i></b>:</u> 
+            xxxx
+            <span class="collapse" id="more_refined_mapping">
+                xxxx.
+            </span> 
+            <span> <a href="#more_refined_mapping" data-toggle="collapse" onclick="toggleText(this)" id="link-more_refined_mapping">... See More</a></span>-->
+        </div>                       
+    </div>                   
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[ICDE'26] Tetris: Lightweight Hyperparameter Auto-Tuning for Mitigating Performance Spikes in LSM-KVS <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 42nd IEEE International Conference on Data Engineering, May 2026</i> 
+            <br />
+            Yina Lv, Wenhao Zhu, Qiao Li, Quanqing Xu, <u><b>Congming Gao</b></u>, Chuanhui Yang, Xiaoli Wang, Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>                   
+    </div>
+
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[ASPLOS'26] Nemo: A Low-Write-Amplification Cache for Tiny Objects on Log-Structured Flash Devices <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The International Conference on Architectural Support for Programming Languages and Operating Systems, March 2026</i> 
+            <br />
+            Xufeng Yang, Tingting Tan, Jingxin Hu, <u><b>Congming Gao*</b></u>, Mingyang Liu, Tianyang Jiang, Jian Chen, Linbo Long, Yina Lv, Jiwu Shu.
+            <br />
+        </div>                        
+    </div>           
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NVMSA'25] ZoneFit: Enabling Zoned Flash Benefits via Granularity-Matched SLC Management <span style="color: #FF0000;">Best Paper Award</span></b>
+            <br />
+            <i>The 14th IEEE Non-Volatile Memory Systems and Applications Symposium, August 2025</i> 
+            <br />
+            Dingcui Yu, Zonghuan Yan, Yunpeng Song, Yanyun Wang, Xinghui Duan, <u><b>Congming Gao</b></u>, Yina Lv, Liang Shi.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[FGCS] AtRS: Auto-tuning RAID system with GAN</b>
+            <br />
+            <i>Future Generation Computer Systems, 2025</i> 
+            <br />
+            Fangzheng Wang, <u><b>Congming Gao</b></u>, Bohong Zhu and Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TACO] Overlapping Aware Data Placement Optimizations for LSM Tree-Based Store on ZNS SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Architecture and Code Optimization, March 2025</i> 
+            <br />
+            Jingcheng Shen, Lang Yang, Linbo Long, Zhenhua Tan, <u><b>Congming Gao</b></u>, Kan Zhong, Masao Okita, Fumihiko Ino.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[FAST'25] MedFS: Pursuing Low Update Overhead via Metadata-Enabled Delta Compression for Log-structured File System on Mobile Device <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 23rd USENIX Conference on File and Storage Technologies, February 2025</i> 
+            <br />
+            Chao Wu, Cheng Ji*, <u><b>Congming Gao*</b></u>, Zongwei Zhu, Weichao Guo, Chao Yu, Li-Pin Chang and Yanzhi Wang.
+            <br />
+        </div>                        
+    </div>
+    </div>  
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NAS'24] In-place Switch: Reprogramming based SLC Cache Design for Hybrid 3D SSDs</b>
+            <br />
+            <i>The 17th International Conference on Networking, Architecture, and Storage, November 2024</i> 
+            <br />
+            Xufeng Yang, Jiancong Zheng and <u><b>Congming Gao*</b></u>.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[MICRO'24] Ares-Flash: Efficient Parallel Integer Arithmetic Operations Using NAND Flash Memory <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 57th IEEE/ACM International Symposium on Microarchitecture, November 2024</i> 
+            <br />
+            Jian Chen, <u><b>Congming Gao*</b></u>, Youyou Lu, Yuhao Zhang and Jiwu Shu*.
+            <br />
+        </div>                        
+    </div>                  
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>Design of User Space Storage Architecture for SCSI Subsystem (in Chinese)</b>
+            <br />
+            <i>Journal of Computer Research and Development, 2024</i> 
+            <br />
+            Dongdong Hao, <u><b>Congming Gao</b></u> and Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NVMSA'24] Hook: A Pattern Locality Guided Prefetch with Enhanced Read Performance for Hybrid SSDs <span style="color: #FF0000;">Best Paper Award</span></b>
+            <br />
+            <i>The 13th IEEE Non-Volatile Memory Systems and Applications Symposium, August 2024</i> 
+            <br />
+            Yumiao Zhao, Jiancong Zheng, Gangyong Jia, Liang Shi and <u><b>Congming Gao*</b></u>.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TACO] Optimizing Garbage Collection for ZNS SSDs via In-storage Data Migration and Address Remapping <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Architecture and Code Optimization, 2024</i> 
+            <br />
+            Zhenhua Tan, Linbo Long, Jingcheng Shen, Renping Liu, <u><b>Congming Gao</b></u>, Kan Zhong and Yi Jiang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TOS] Extremely-Compressed SSDs with I/O Behavior Prediction <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Storage, 2024</i> 
+            <br />
+            Xiangyu Yao, Qiao Li, Kaihuan Li, Xinbiao Gan, Jie Zhang, <u><b>Congming Gao</b></u>, Zhirong Shen, Quanqing Xu, Chuanhui Yang, Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[JSA] Space-Efficient and High-Performance Inline Deduplication for Emerging Hybrid Storage System with Libra+</b>
+            <br />
+            <i>Springer Journal of Systems Architecture, 2024</i> 
+            <br />
+            Renhui Chen, Tianmeng Zhang, Zijing Li, <u><b>Congming Gao*</b></u>, Youtao Zhang, Qiao Li, Jun Yang, Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[DATE'24] Para-ZNS: Improving Small-zone ZNS SSDs Parallelism through Dynamic Zone Mapping</b>
+            <br />
+            <i>The Design, Automation & Test in Europe Conference & Exhibition, March 2024</i> 
+            <br />
+            Zhenhua Tan, Linbo Long, Jingcheng Shen, <u><b>Congming Gao</b></u>, Renping Liu and Yi Jiang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[HPCA'24] Midas Touch: Invalid-Data Assisted Reliability and Performance Boost for 3D High-Density Flash <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The IEEE International Symposium on High-Performance Computer Architecture, March 2024</i> 
+            <br />
+            Qiao Li, Hongyang Dang, Zheng Wan, <u><b>Congming Gao*</b></u>, Min Ye, Jie Zhang, Tei-Wei Kuo and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>               
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TOS] Design and Implementation of Deduplication on F2FS <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Storage, 2024</i> 
+            <br />
+            Tianmeng Zhang, Renhui Chen, Zijing Li, <u><b>Congming Gao*</b></u>, Chengke Wang, Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[ASP-DAC'24] Overlapping Aware Zone Allocation for LSM Tree-Based Store on ZNS SSDs</b>
+            <br />
+            <i>The Asia and South Pacific Design Automation Conference, January 2024</i> 
+            <br />
+            Jingcheng Shen, Lang Yang, Linbo Long, Renping Liu, Zhenhua Tan, <u><b>Congming Gao</b></u> and Yi Jiang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[ISPA'23] Libra: A Space-Efficient, High-Performance Inline Deduplication for Emerging Hybrid Storage System</b>
+            <br />
+            <i>The IEEE International Symposium on Parallel & Distributed Processing with Applications, December 2023</i> 
+            <br />
+            Tianmeng Zhang, Renhui Chen, <u><b>Congming Gao*</b></u>, Youtao Zhang, Jun Yang and Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TACO] WA-Zone: Wear-Aware Zone Management Optimization for LSM-Tree on ZNS SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Architecture and Code Optimization, 2023</i> 
+            <br />
+            Linbo Long, Shuiyong He, Jingchen Shen, Renping Liu, Zhenhua Tan, <u><b>Congming Gao</b></u>, Duo Liu, Yi Jiang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[DAC'23] RLAlloc: A Deep Reinforcement Learning-Assisted Resource Allocation Framework for Enhanced Both I/O Throughput and QoS Performance of Multi-Streamed SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The Design Automation Conference, July 2023</i> 
+            <br />
+            Mengquan Li, Chao Wu, <u><b>Congming Gao</b></u>, Cheng Ji and Kenli Li.
+            <br />
+        </div>                        
+    </div>               
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[DATE'23] Optimizing Data Migration for Garbage Collection in ZNS SSDs</b>
+            <br />
+            <i>The Design, Automation & Test in Europe Conference & Exhibition, April 2023</i> 
+            <br />
+            Zhenhua Tan, Linbo Long, Renping Liu, <u><b>Congming Gao</b></u>, Yi Jiang and Yan Liu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[HPCA'23] MGC: Multiple-Gray-Code for 3D NAND Flash based High-Density SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 29th IEEE International Symposium on High-Performance Computer Architecture, March 2023</i> 
+            <br />
+            Yina Lv, Liang Shi, Qiao Li, <u><b>Congming Gao</b></u>, Yunpeng Song, Longfei Luo, Youtao Zhang.
+            <br />
+        </div>                        
+    </div>                 
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TCAD] ADAR: Application-specific Data Allocation and Reprogramming Optimization for 3D TLC Flash Memory <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2022</i> 
+            <br />
+            Linbo Long, Jinpeng Huang, <u><b>Congming Gao*</b></u>, Duo Liu, Renping Liu, Yi Jiang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>Stop unnecessary refreshing: extending 3D NAND flash lifetime with ORBER</b>
+            <br />
+            <i>CCF Transactions on High Performance Computing, 2022</i> 
+            <br />
+            Min Ye, Qiao Li, <u><b>Congming Gao</b></u>, Shun Deng, Tei‑Wei Kuo and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TOS] Reprogramming 3D TLC Flash Memory based Solid State Drives <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>ACM Transactions on Storage, 2022</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Min Ye, Chun Jason Xue, Youtao Zhang, Liang Shi, Jiwu Shu and Jun Yang.
+            <br />
+        </div>                        
+    </div>                 
+    </div>   
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[MICRO'21] ParaBit: Processing Parallel Bitwise Operations in NAND Flash Memory based SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 54st Annual IEEE/ACM International Symposium on Microarchitecture, October 2021</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Xin Xin, Youyou Lu, Youtao Zhang, Jun Yang and Jiwu Shu.
+            <br />
+        </div>                        
+    </div>    
+    </div>
+
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>Architecture and Technologies of Flash Memory based Solid State Drives (in Chinese)</b>
+            <br />
+            <i>Journal of Computer Research and Development, 2021</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Kai Liu, Chun Jason Xue and Jiwu Shu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[FAST'21] Pattern-Guided File Compression with User-Experience Enhancement for Log-Structured File System on Mobile Devices <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>The 19th USENIX Conference on File and Storage Technologies, February 2021</i> 
+            <br />
+            Cheng Ji, Li-Pin Chang, Riwei Pan, Chao Wu, <u><b>Congming Gao</b></u>, Liang Shi, Tei-Wei Kuo and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>              
+    </div>
+
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TPDS] Boosting the Performance of SSDs via Fully Exploiting the Plane Level Parallelism <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Parallel and Distributed Systems, 2020</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Kai Liu, Chun Jason Xue, Jun Yang and Youtao Zhang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TCAD] Aging Capacitor Supported Cache Management Scheme for Solid State Drivers <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2019</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Qiao Li, Kai Liu, Chun Jason Xue, Jun Yang and Youtao Zhang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="selected top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[MICRO'19] Constructing Large, Durable and Fast SSD System via Reprogramming 3D TLC Flash Memory <span class="box-tier box-tier-1">CCF-A</span> <span style="color: #FF0000;">Alibaba Cloud-CCF Storage Committee Outstanding Paper Award</span></b>
+            <br />
+            <i>The 52nd IEEE/ACM International Symposium on Microarchitecture, October 2019</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Min Ye, Qiao Li, Chun Jason Xue, Youtao Zhang, Liang Shi and Jun Yang.
+            <br />
+        </div>                        
+    </div>                 
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TC] Maximizing I/O Throughput and Minimizing Performance Variation via Reinforcement Learning based I/O Merging for SSDs <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computers, 2019</i> 
+            <br />
+            Chao Wu, Cheng Ji, Qiao Li, <u><b>Congming Gao</b></u>, Riwei Pan, Chenchen Fu, Liang Shi and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NVMSA'19] Fair Down to the Device: A GC-Aware Fair Scheduler for SSD</b>
+            <br />
+            <i>The 8th IEEE Non-Volatile Memory Systems and Applications Symposium, August 2019</i> 
+            <br />
+            Cheng Ji, Lun Wang, Qiao Li, <u><b>Congming Gao</b></u>, Liang Shi, Chia-Lin Yang and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NAS'19] Optimizing Tail Latency of LDPC based Flash Memory Storage Systems Via Smart Refresh</b>
+            <br />
+            <i>The 14th International Conference on Networking, Architecture, and Storage, August 2019</i> 
+            <br />
+            Yina Lv, Liang Shi, Qiao Li, <u><b>Congming Gao</b></u>, Chun Jason Xue and Edwin Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[MSST'19] Parallel all the time: Plane Level Parallelism Exploration for High Performance SSDs <span style="color: #FF0000;">Alibaba Cloud-CCF Storage Committee Outstanding Paper Award</span></b>
+            <br />
+            <i>The 35th International Conference on Massive Storage Systems and Technology, May 2019</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Chun Jason Xue, Jun Yang and Youtao Zhang.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[SAC'19] Optimizing Fragmentation and Segment Cleaning for CPS based Storage Devices</b>
+            <br />
+            <i>The 34th ACM/SIGAPP Symposium On Applied Computing, April 2019</i> 
+            <br />
+            Qi Li, Aosong Deng, <u><b>Congming Gao</b></u>, Yu Liang, Liang Shi and Edwin Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TR] Process Variation Aware Read Performance Improvement for LDPC-Based nand Flash Memory</b>
+            <br />
+            <i>IEEE Transactions on Reliability, 2019</i> 
+            <br />
+            Qiao Li, Liang Shi, Yejia Di, <u><b>Congming Gao</b></u>, Cheng Ji, Yu Liang and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[CODES+ISSS'18] Revisiting Wear Leveling Design on Compression Applied 3D NAND Flash Memory: WIP</b>
+            <br />
+            <i>The 2018 International Conference on Hardware/Software Codesign and System Synthesis, October 2018</i> 
+            <br />
+            Yejia Di, Liang Shi, <u><b>Congming Gao</b></u>, Qiao Li and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NVMSA'18] Flash Friendly File System Aware Mapping Cache Design on Solid State Drives</b>
+            <br />
+            <i>The 7th IEEE Non-Volatile Memory Systems and Applications Symposium, August 2018</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Yejia Di, Aosong Deng, Duo Liu, Cheng Ji, Chun Jason Xue and Liang Shi.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TC] Minimizing Retention Induced Refresh Through Exploiting Process Variation of Flash Memory <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computers, 2018</i> 
+            <br />
+            Yejia Di, Liang Shi, <u><b>Congming Gao</b></u>, Qiao Li, Chun Jason Xue and Kaijie Wu.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[GLSVLSI'18] An Efficient Cache Management Scheme for Capacitor Equipped Solid State Drives</b>
+            <br />
+            <i>The 2018 Great Lakes Symposium on VLSI, May 2018</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Yejia Di, Qiao Li, Chun Jason Xue and Edwin H.-M. Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[GLSVLSI'18] Loss is Gain: Shortening Data for Lifetime Improvement on Low-Cost ECC Enabled Consumer-Level Flash Memory</b>
+            <br />
+            <i>The 2018 Great Lakes Symposium on VLSI, May 2018</i> 
+            <br />
+            Yejia Di, Liang Shi, <u><b>Congming Gao</b></u>, Qiao Li, Kaijie Wu and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TC] Access Characteristic Guided Read and Write Regulation on Flash based Storage Systems <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computers, 2018</i> 
+            <br />
+            Qiao Li, Liang Shi, <u><b>Congming Gao</b></u>, Yejia Di, Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TECS] Lightweight Data Compression for Mobile Flash Storage</b>
+            <br />
+            <i>ACM Transactions on Embedded Computing Systems- Special Issue ESWEEK, 2017</i> 
+            <br />
+            Cheng Ji, Li-Pin Chang, Liang Shi, <u><b>Congming Gao</b></u>, Chao Wu, YuanGang Wang, Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TODAES] Exploiting Chip Idleness for Minimizing Garbage Collection Induced Chip Access Conflict on SSDs</b>
+            <br />
+            <i>ACM Transactions on Design Automation of Electronic Systems, 2017</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Yejia Di, Qiao Li, Chun Jason Xue, Kaijie Wu and Edwin H.-M. Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TCAD] Exploiting Parallelism for Access Conflict Minimization in Flash-based Solid State Drives <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2017</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Cheng Ji, Yejia Di, Kaijie Wu, Chun Jason Xue and Edwin H.-M. Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="top">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[TCAD] Asymmetric Error Rates of Cell States Exploration for Performance Improvement on Flash Memory based Storage Systems <span class="box-tier box-tier-1">CCF-A</span></b>
+            <br />
+            <i>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2016</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Edwin H.-M. Sha, Liang Shi, Kaijie Wu, Mengying Zhao and Chun Jason Xue.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[NVMSA'16] Minimizing cell-to-cell interference by exploiting differential bit impact characteristics of scaled MLC NAND flash memories</b>
+            <br />
+            <i>The 5th Non-Volatile Memory Systems and Applications Symposium, June 2016</i> 
+            <br />
+            Yejia Di, Liang Shi, <u><b>Congming Gao</b></u>, Kaijie Wu, Chun Jason Xue and Edwin H.-M. Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[DATE'15] Maximizing IO Performance via Conflict reduction for Flash Memory Storage Systems</b>
+            <br />
+            <i>The 2015 Design, Automation & Test in Europe Conference, March 2015</i> 
+            <br />
+            Qiao Li, Liang Shi, <u><b>Congming Gao</b></u>, Kaijie Wu, Jason Chun Xue, Qingfeng Zhuge and H.-M. Edwin Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[ICCD'14] Exploit Asymmetric Error Rates of Cell States to Improve the Performance of Flash Memory Storage Systems</b>
+            <br />
+            <i>The 32nd IEEE International Conference on Computer Design, October 2014</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Kaijie Wu, Chun Jason Xue, and Edwin H.-M. Sha.
+            <br />
+        </div>                        
+    </div>          
+    </div>
+
+    <div class="project" data-filter="others">
+    <div class="row mb-4">
+        <div class="col-sm-14">
+            <b>[MSST'14] Exploiting Parallelism in IO Scheduling for Access Conflict Minimization in Flash-based Solid State Drives</b>
+            <br />
+            <i>The 30th International Conference on Massive Storage Systems and Technology, June 2014</i> 
+            <br />
+            <u><b>Congming Gao</b></u>, Liang Shi, Mengying Zhao, Chun Jason Xue, Kaijie Wu, and Edwin Sha.
+            <br />
+        </div>                        
+    </div>                 
+    </div>
+
+    </div>
+        <p></p>
+    </div>
+</div>
+
+<!-- Award section -->
+
+<hr />
+
+<div class="row" id="awards">
+    <div class="col">
+        <h2 clss="mb-5">🏆 Awards</h2>
+        <p></p>
+
+
+    <div class="row mb-4">
+        <div class="col-sm-12">   
+        <i>Xiaomi Young Talent Program (2025)</i> 
+        <br />
+        <i>IEEE NVMSA Best Paper Award (2025)</i> 
+        <br />
+        <i>The Tenth Young Elite Scientists Sponsorship Program by CAST (2025)</i> 
+        <br />
+        <i>ACM SIGCSE China Rising Star Award (2024)</i> 
+        <br />
+        <i>IEEE NVMSA Best Paper Award (2024)</i> 
+        <br />
+        <i>Nanqiang Top-notch Young Talents Support Plan of Xiamen University (B-class) (2022)</i> 
+        <br />
+        <i>Excellent Doctorial Dissertation Award of Chongqing (2021)</i> 
+        <br />
+        <i>Excellent Doctorial Dissertation Award of Chongqing University (2021)</i> 
+        <br />
+        <i>"Alibaba Cloud-CCF Storage Committee" Outstanding Paper Award (2020)</i> 
+        <br />
+        <i>"Alibaba Cloud-CCF Storage Committee" Outstanding Paper Award (2019)</i> 
+        <br />
+        </div>
+    </div>
+        <p></p>
+    </div>
+</div>
+
+<!-- Activities section -->
+
+<hr />
+
+<div class="row" id="activities">
+    <div class="col">
+        <h2 clss="mb-5">🤝 Activities</h2>
+        <p></p>
+
+    <div class="row mb-4">
+        <div class="col-sm-12">        
+        <b>Journal Reviewer:</b> 
+        <br />
+        <i>ACM CSUR/TC/TOS/TPDS/TCAD/TKDE/TACO/TODAES/...</i> 
+        <br />
+        <b>Program Committee Member:</b>
+        <br />
+        <i>ICMR'26/ASP-DAC'25/HPCC'24/NAS'24/ChinaSys'23/ICPADS'23/...</i> 
+        <br />        
+        <b>Conference Organizer:</b>
+        <br />    
+        <i>ChinaSys Spring'26 Storage Track Chair/ChinaSys Spring'25 Publicity Chair/NAS'24 Local Arrangement Chair/ESWEEK-MSC'20 Website Chair/...</i> 
+        </div>
+    </div>
+      
+        <p></p>
+    </div>
+</div>
+
+<!-- Resources section -->
+<!--
+<hr />
+
+<div class="row" id="resources">
+    <div class="col">
+        <h2 clss="mb-5">⛏️ resources</h2>
+        <p></p>
+        all software releases of the above projects can also be found here!
+        <p></p>
+        <div id="filters-resources">
+            <button class="filter-button active" data-filter="*">all</button>
+            
+                <button class="filter-button" data-filter="research">research</button>
+            
+        </div>
+        <p></p>
+        <div id="github-cards" class="isotope">
+            
+                <div class="github-card" data-filter="research">
+    <div data-url="https://xxxx"></div>
+</div>
+            
+        </div>
+        <p></p>
+    </div>
+</div>
+-->
+
+<!-- Footer section -->
+
+<div>‎</div>
+<hr />
+
+<footer class="pt-2 my-md-2 pt-md-">
+    <div class="row justify-content-center">
+        <div class="col-7 col-md text-left align-self-center">
+            <p class="h6">© Congming Gao, <span id="currentYear"></span></p> &gt; web source @github
+        </div>
+    </div>
+    <p></p>
+</footer>
+
+
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Isotope JS -->
+        <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.2/dist/isotope.pkgd.min.js"></script>
+
+        <!-- OwlCarousel2 JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+        <!-- Axios JS -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		<!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+		<!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+    </body>
+</html>
