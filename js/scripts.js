@@ -618,25 +618,6 @@ $(document).ready(function() {
 });
 
 
-// Dark/Light theme based on predefined time
-document.addEventListener('DOMContentLoaded', function() {
-    const buttonEl = document.querySelector('.toggle-theme-button');
-    const speechBalloon = document.querySelector('.speech-balloon');
-    var currentHour = new Date().getHours();
-
-    // Dark theme is used between 7 PM of last day
-    // to 7 AM next day. Otherwise, use light theme
-    if (currentHour > 19 || currentHour <= 7) {
-        document.body.classList.add('dark-theme');
-        buttonEl.innerText = '☀️';
-        speechBalloon.innerText = 'it\'s night, lights off!';
-    } else {
-        document.body.classList.add('light-theme');
-        buttonEl.innerText = '🌙';
-        speechBalloon.innerText = 'it\'s day, lights on!';
-    }
-});
-
 
 // Automatically update year in footer
 document.getElementById("currentYear").textContent = new Date().getFullYear();
